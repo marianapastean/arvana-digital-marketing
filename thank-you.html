@@ -4,25 +4,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#1b1025">
-  <meta name="description" content="Mulțumim pentru mesaj. ARVANA Digital Marketing va reveni în curând cu un răspuns.">
-  <title>Mulțumesc pentru mesaj! | ARVANA Digital Marketing</title>
+  <meta name="theme-color" content="#24152F">
+
+  <title>Mulțumesc pentru mesaj | ARVANA Digital Marketing</title>
+
+  <meta name="description" content="Îți mulțumesc pentru mesaj. Voi reveni în curând cu un răspuns. ARVANA Digital Marketing – Direcție clară. Branduri cu valoare.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --background: #1b1025;
-      --background-light: #291737;
-      --plum: #432454;
-      --purple: #76508c;
-      --gold: #d8b77b;
-      --gold-light: #f0d9a9;
-      --ivory: #fff9f0;
-      --muted: #d5c8dc;
-      --line: rgba(216, 183, 123, 0.25);
+      --plum-dark: #24152F;
+      --plum: #352044;
+      --plum-light: #513264;
+      --royal-purple: #73518B;
+      --lavender: #D5C2E2;
+      --gold: #D6B477;
+      --gold-light: #F0DDB8;
+      --ivory: #FFF9F0;
+      --text-muted: #D8CCDF;
+      --border: rgba(214, 180, 119, 0.32);
     }
 
     * {
@@ -37,51 +41,96 @@
 
     body {
       min-height: 100vh;
+      overflow-x: hidden;
       font-family: "DM Sans", sans-serif;
       color: var(--ivory);
+
       background:
-        radial-gradient(ellipse at 50% 35%, rgba(111, 68, 133, 0.35), transparent 48%),
-        radial-gradient(circle at 10% 90%, rgba(120, 78, 139, 0.13), transparent 35%),
-        var(--background);
+        radial-gradient(
+          ellipse at 50% 42%,
+          rgba(115, 81, 139, 0.34) 0%,
+          transparent 48%
+        ),
+        radial-gradient(
+          circle at 5% 95%,
+          rgba(214, 180, 119, 0.08),
+          transparent 35%
+        ),
+        linear-gradient(
+          135deg,
+          #24152F 0%,
+          #30203D 50%,
+          #24152F 100%
+        );
+
       display: flex;
       flex-direction: column;
-      overflow-x: hidden;
     }
 
-    body::before,
-    body::after {
-      content: "";
+    /* DECORATIVE BACKGROUND */
+
+    .ambient {
       position: fixed;
-      width: 420px;
-      height: 420px;
-      border: 1px solid rgba(216, 183, 123, 0.12);
-      border-radius: 50%;
+      inset: 0;
+      overflow: hidden;
       pointer-events: none;
-      animation: orbit 24s linear infinite;
+      z-index: 0;
     }
 
-    body::before {
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(214, 180, 119, 0.16);
+      animation: float 12s ease-in-out infinite;
+    }
+
+    .orb-one {
+      width: 430px;
+      height: 430px;
       top: -230px;
-      right: -180px;
+      right: -140px;
     }
 
-    body::after {
-      bottom: -270px;
-      left: -180px;
-      width: 520px;
-      height: 520px;
-      animation-direction: reverse;
+    .orb-two {
+      width: 300px;
+      height: 300px;
+      bottom: -170px;
+      left: -100px;
+      animation-delay: -5s;
     }
 
-    @keyframes orbit {
-      from { transform: rotate(0deg) scale(1); }
-      50% { transform: rotate(180deg) scale(1.06); }
-      to { transform: rotate(360deg) scale(1); }
+    .orb-three {
+      width: 110px;
+      height: 110px;
+      top: 24%;
+      left: 9%;
+      border-color: rgba(214, 180, 119, 0.25);
+      animation-duration: 9s;
     }
 
-    .navbar {
+    .orb-four {
+      width: 75px;
+      height: 75px;
+      right: 11%;
+      bottom: 23%;
+      border-color: rgba(213, 194, 226, 0.2);
+      animation-delay: -3s;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-18px) rotate(8deg);
+      }
+    }
+
+    /* HEADER */
+
+    header {
       width: 100%;
-      padding: 28px 7%;
+      padding: 27px 7%;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -90,104 +139,178 @@
     }
 
     .logo {
-      display: flex;
+      display: inline-flex;
       align-items: center;
       text-decoration: none;
     }
 
     .logo img {
-      display: block;
-      width: 165px;
-      height: auto;
+      width: 175px;
+      max-height: 75px;
       object-fit: contain;
+      display: block;
     }
 
-    .nav-label {
-      color: var(--gold);
+    .header-label {
+      color: var(--gold-light);
       font-size: 10px;
+      font-weight: 600;
       letter-spacing: 3px;
       text-transform: uppercase;
     }
 
+    /* MAIN */
+
     main {
       flex: 1;
+      min-height: 650px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 65px 22px 90px;
+      padding: 55px 22px 85px;
       position: relative;
       z-index: 1;
     }
 
-    .confirmation {
+    .confirmation-card {
       width: 100%;
-      max-width: 790px;
+      max-width: 850px;
+      position: relative;
+      overflow: hidden;
       text-align: center;
-      padding: 70px 55px;
-      border: 1px solid var(--line);
-      border-radius: 32px;
-      background: linear-gradient(
-        145deg,
-        rgba(67, 36, 84, 0.78),
-        rgba(35, 20, 47, 0.88)
-      );
+
+      padding: 76px 65px;
+
+      border: 1px solid var(--border);
+      border-radius: 34px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(81, 50, 100, 0.83),
+          rgba(42, 27, 54, 0.94)
+        );
+
       box-shadow:
-        0 30px 100px rgba(0, 0, 0, 0.22),
-        inset 0 1px 0 rgba(255, 255, 255, 0.06);
-      backdrop-filter: blur(18px);
-      animation: reveal 1s ease both;
+        0 35px 100px rgba(16, 8, 22, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+      backdrop-filter: blur(20px);
+
+      animation: cardEntrance 1s cubic-bezier(.2,.8,.2,1) both;
     }
 
-    @keyframes reveal {
+    .confirmation-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 15%;
+      width: 70%;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        var(--gold),
+        transparent
+      );
+    }
+
+    .confirmation-card::after {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      border: 1px solid rgba(214, 180, 119, 0.07);
+      top: -200px;
+      right: -100px;
+      pointer-events: none;
+    }
+
+    @keyframes cardEntrance {
       from {
         opacity: 0;
-        transform: translateY(28px);
+        transform: translateY(35px) scale(.98);
       }
       to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
       }
     }
 
-    .success-icon {
-      width: 94px;
-      height: 94px;
-      border: 1px solid rgba(216, 183, 123, 0.65);
-      border-radius: 50%;
+    /* SUCCESS SYMBOL */
+
+    .success-wrapper {
+      width: 112px;
+      height: 112px;
       margin: 0 auto 36px;
+      border-radius: 50%;
+      padding: 8px;
+      border: 1px solid rgba(214, 180, 119, 0.5);
+
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--gold-light);
-      font-size: 42px;
-      font-weight: 300;
+
       box-shadow:
-        0 0 0 12px rgba(216, 183, 123, 0.04),
-        0 0 45px rgba(216, 183, 123, 0.13);
-      animation: pulse 3s ease-in-out infinite;
+        0 0 0 12px rgba(214, 180, 119, 0.035),
+        0 0 50px rgba(214, 180, 119, 0.12);
+
+      animation: successPulse 4s ease-in-out infinite;
     }
 
-    @keyframes pulse {
-      0%, 100% { box-shadow: 0 0 0 12px rgba(216, 183, 123, 0.04), 0 0 45px rgba(216, 183, 123, 0.13); }
-      50% { box-shadow: 0 0 0 19px rgba(216, 183, 123, 0.02), 0 0 65px rgba(216, 183, 123, 0.2); }
+    .success-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: linear-gradient(
+        145deg,
+        #E9D1A1,
+        #C59D61
+      );
+
+      color: #352044;
+      font-size: 43px;
+      font-weight: 400;
     }
+
+    @keyframes successPulse {
+      0%, 100% {
+        box-shadow:
+          0 0 0 12px rgba(214, 180, 119, 0.035),
+          0 0 50px rgba(214, 180, 119, 0.12);
+      }
+      50% {
+        box-shadow:
+          0 0 0 19px rgba(214, 180, 119, 0.025),
+          0 0 65px rgba(214, 180, 119, 0.2);
+      }
+    }
+
+    /* TEXT */
 
     .eyebrow {
-      color: var(--gold);
+      color: var(--gold-light);
       font-size: 11px;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 4px;
       text-transform: uppercase;
-      margin-bottom: 24px;
+      margin-bottom: 26px;
     }
 
     h1 {
       font-family: "Playfair Display", serif;
-      font-size: clamp(42px, 7vw, 76px);
-      line-height: 1.08;
+      font-size: clamp(48px, 7vw, 82px);
       font-weight: 500;
-      letter-spacing: -1.5px;
-      margin-bottom: 26px;
+      line-height: 1.08;
+      letter-spacing: -2px;
+      color: var(--ivory);
+      margin-bottom: 27px;
     }
 
     h1 span {
@@ -197,11 +320,12 @@
     }
 
     .description {
-      max-width: 540px;
+      max-width: 590px;
       margin: 0 auto;
-      color: var(--muted);
+      color: var(--text-muted);
       font-size: 16px;
-      line-height: 1.9;
+      line-height: 1.95;
+      font-weight: 400;
     }
 
     .description strong {
@@ -209,137 +333,215 @@
       font-weight: 600;
     }
 
-    .divider {
-      width: 75px;
+    /* GOLD DIVIDER */
+
+    .gold-divider {
+      width: 100px;
       height: 1px;
-      margin: 38px auto;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 39px auto;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        var(--gold),
+        transparent
+      );
     }
+
+    /* NEXT STEP */
 
     .next-step {
-      color: var(--muted);
+      max-width: 480px;
+      margin: 0 auto 37px;
+      color: var(--text-muted);
       font-size: 13px;
-      line-height: 1.8;
-      margin-bottom: 34px;
+      line-height: 1.9;
     }
 
-    .next-step span {
+    .next-step strong {
       color: var(--gold-light);
+      font-weight: 600;
     }
 
-    .button {
+    /* BUTTON */
+
+    .back-button {
+      min-height: 61px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 13px;
-      min-height: 58px;
-      padding: 0 34px;
+      gap: 16px;
+
+      padding: 0 38px;
       border-radius: 50px;
-      background: linear-gradient(110deg, #d8b77b, #f0d9a9);
-      color: #24152b;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
+
+      background: linear-gradient(
+        110deg,
+        #D6B477,
+        #F0DDB8
+      );
+
+      color: #30203D;
       text-decoration: none;
+
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.7px;
       text-transform: uppercase;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 10px 35px rgba(216, 183, 123, 0.14);
+
+      box-shadow: 0 12px 35px rgba(214, 180, 119, 0.16);
+
+      transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        background .35s ease;
     }
 
-    .button:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 45px rgba(216, 183, 123, 0.25);
+    .back-button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 45px rgba(214, 180, 119, 0.28);
+      background: linear-gradient(
+        110deg,
+        #F0DDB8,
+        #E2C58F
+      );
     }
 
-    .button .arrow {
-      font-size: 18px;
-      transition: transform 0.3s ease;
+    .back-button .arrow {
+      font-size: 19px;
+      transition: transform .3s ease;
     }
 
-    .button:hover .arrow {
+    .back-button:hover .arrow {
       transform: translateX(5px);
     }
 
+    /* FOOTER */
+
     footer {
-      padding: 24px;
+      padding: 25px 20px;
       text-align: center;
-      border-top: 1px solid rgba(216, 183, 123, 0.12);
+      border-top: 1px solid rgba(214, 180, 119, 0.16);
       position: relative;
       z-index: 1;
     }
 
     footer p {
-      color: #a99ab0;
+      color: #C2B3CA;
       font-size: 10px;
       letter-spacing: 2px;
       text-transform: uppercase;
     }
 
     footer span {
-      color: var(--gold);
+      color: var(--gold-light);
     }
 
-    @media (max-width: 600px) {
-      .navbar {
-        padding: 23px 6%;
+    /* RESPONSIVE */
+
+    @media (max-width: 700px) {
+      header {
+        padding: 22px 6%;
       }
 
       .logo img {
-        width: 135px;
+        width: 140px;
       }
 
-      .nav-label {
+      .header-label {
+        max-width: 125px;
         font-size: 8px;
+        line-height: 1.6;
         letter-spacing: 1.5px;
+        text-align: right;
       }
 
       main {
-        padding: 40px 16px 55px;
+        min-height: auto;
+        padding: 45px 16px 65px;
       }
 
-      .confirmation {
-        padding: 52px 23px;
-        border-radius: 24px;
+      .confirmation-card {
+        padding: 55px 25px;
+        border-radius: 25px;
       }
 
-      .success-icon {
-        width: 78px;
-        height: 78px;
+      .success-wrapper {
+        width: 90px;
+        height: 90px;
+        margin-bottom: 31px;
+      }
+
+      .success-inner {
         font-size: 35px;
-        margin-bottom: 30px;
       }
 
       .eyebrow {
         font-size: 9px;
         letter-spacing: 2.5px;
+        margin-bottom: 22px;
       }
 
       h1 {
-        font-size: clamp(39px, 11vw, 56px);
+        font-size: clamp(43px, 11vw, 62px);
+        letter-spacing: -1px;
       }
 
       .description {
         font-size: 14px;
+        line-height: 1.85;
       }
 
-      .button {
+      .gold-divider {
+        margin: 31px auto;
+      }
+
+      .next-step {
+        font-size: 12px;
+      }
+
+      .back-button {
         width: 100%;
         padding: 0 20px;
         font-size: 10px;
       }
 
+      .orb-three {
+        left: -45px;
+      }
+
+      .orb-four {
+        right: -25px;
+      }
+
       footer p {
-        font-size: 9px;
-        letter-spacing: 1.3px;
+        font-size: 8px;
+        letter-spacing: 1.2px;
+        line-height: 1.8;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .header-label {
+        display: none;
+      }
+
+      .confirmation-card {
+        padding: 48px 19px;
+      }
+
+      h1 {
+        font-size: 42px;
       }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
+      *,
+      *::before,
+      *::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
         transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
       }
     }
   </style>
@@ -347,25 +549,41 @@
 
 <body>
 
-  <header class="navbar">
-    <a class="logo" href="https://marianapastean.github.io/arvana-digital-marketing/" aria-label="ARVANA - pagina principal">
+  <div class="ambient" aria-hidden="true">
+    <div class="orb orb-one"></div>
+    <div class="orb orb-two"></div>
+    <div class="orb orb-three"></div>
+    <div class="orb orb-four"></div>
+  </div>
+
+  <header>
+    <a
+      class="logo"
+      href="https://marianapastean.github.io/arvana-digital-marketing/"
+      aria-label="ARVANA - pagina principal"
+    >
       <img
         src="https://raw.githubusercontent.com/marianapastean/arvana-digital-marketing/main/Logo%20-%20ARVANA%20Digital%20Marketing%20%281%29.png"
         alt="ARVANA Digital Marketing"
       >
     </a>
 
-    <span class="nav-label">Strategic Marketing & Brand Development</span>
+    <div class="header-label">
+      Strategic Marketing & Brand Development
+    </div>
   </header>
 
   <main>
-    <section class="confirmation">
 
-      <div class="success-icon" aria-label="Mesaj trimis cu succes">
-        ✓
+    <section class="confirmation-card">
+
+      <div class="success-wrapper">
+        <div class="success-inner">✓</div>
       </div>
 
-      <p class="eyebrow">Mesaj transmis cu succes</p>
+      <p class="eyebrow">
+        Mesaj transmis cu succes
+      </p>
 
       <h1>
         Mulțumesc
@@ -373,23 +591,23 @@
       </h1>
 
       <p class="description">
-        Apreciez interesul tău pentru ARVANA.
-        Mesajul tău a fost transmis cu succes, iar eu îl voi analiza
-        cu atenție pentru a înțelege mai bine nevoile și obiectivele
-        proiectului tău.
+        Mă bucur că ai ales să faci primul pas către o direcție
+        mai clară pentru brandul sau businessul tău.
+        Mesajul tău a fost transmis cu succes și îl voi analiza
+        cu atenție.
       </p>
 
-      <div class="divider"></div>
+      <div class="gold-divider"></div>
 
       <p class="next-step">
         Voi reveni în cel mai scurt timp la adresa de e-mail
-        <span>pe care ai furnizat-o în formular.</span>
+        pe care ai completat-o în formular.
         <br>
-        Îți mulțumesc pentru încredere!
+        <strong>Îți mulțumesc pentru încredere!</strong>
       </p>
 
       <a
-        class="button"
+        class="back-button"
         href="https://marianapastean.github.io/arvana-digital-marketing/"
       >
         Înapoi la ARVANA
@@ -397,10 +615,14 @@
       </a>
 
     </section>
+
   </main>
 
   <footer>
-    <p>© 2026 <span>ARVANA</span> Digital Marketing · Direcție clară. Branduri cu valoare.</p>
+    <p>
+      © 2026 <span>ARVANA</span> Digital Marketing
+      · Direcție clară. Branduri cu valoare.
+    </p>
   </footer>
 
 </body>
