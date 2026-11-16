@@ -1,0 +1,407 @@
+
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1b1025">
+  <meta name="description" content="Mulțumim pentru mesaj. ARVANA Digital Marketing va reveni în curând cu un răspuns.">
+  <title>Mulțumesc pentru mesaj! | ARVANA Digital Marketing</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --background: #1b1025;
+      --background-light: #291737;
+      --plum: #432454;
+      --purple: #76508c;
+      --gold: #d8b77b;
+      --gold-light: #f0d9a9;
+      --ivory: #fff9f0;
+      --muted: #d5c8dc;
+      --line: rgba(216, 183, 123, 0.25);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "DM Sans", sans-serif;
+      color: var(--ivory);
+      background:
+        radial-gradient(ellipse at 50% 35%, rgba(111, 68, 133, 0.35), transparent 48%),
+        radial-gradient(circle at 10% 90%, rgba(120, 78, 139, 0.13), transparent 35%),
+        var(--background);
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      width: 420px;
+      height: 420px;
+      border: 1px solid rgba(216, 183, 123, 0.12);
+      border-radius: 50%;
+      pointer-events: none;
+      animation: orbit 24s linear infinite;
+    }
+
+    body::before {
+      top: -230px;
+      right: -180px;
+    }
+
+    body::after {
+      bottom: -270px;
+      left: -180px;
+      width: 520px;
+      height: 520px;
+      animation-direction: reverse;
+    }
+
+    @keyframes orbit {
+      from { transform: rotate(0deg) scale(1); }
+      50% { transform: rotate(180deg) scale(1.06); }
+      to { transform: rotate(360deg) scale(1); }
+    }
+
+    .navbar {
+      width: 100%;
+      padding: 28px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 2;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .logo img {
+      display: block;
+      width: 165px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .nav-label {
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 65px 22px 90px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .confirmation {
+      width: 100%;
+      max-width: 790px;
+      text-align: center;
+      padding: 70px 55px;
+      border: 1px solid var(--line);
+      border-radius: 32px;
+      background: linear-gradient(
+        145deg,
+        rgba(67, 36, 84, 0.78),
+        rgba(35, 20, 47, 0.88)
+      );
+      box-shadow:
+        0 30px 100px rgba(0, 0, 0, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(18px);
+      animation: reveal 1s ease both;
+    }
+
+    @keyframes reveal {
+      from {
+        opacity: 0;
+        transform: translateY(28px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .success-icon {
+      width: 94px;
+      height: 94px;
+      border: 1px solid rgba(216, 183, 123, 0.65);
+      border-radius: 50%;
+      margin: 0 auto 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-light);
+      font-size: 42px;
+      font-weight: 300;
+      box-shadow:
+        0 0 0 12px rgba(216, 183, 123, 0.04),
+        0 0 45px rgba(216, 183, 123, 0.13);
+      animation: pulse 3s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 12px rgba(216, 183, 123, 0.04), 0 0 45px rgba(216, 183, 123, 0.13); }
+      50% { box-shadow: 0 0 0 19px rgba(216, 183, 123, 0.02), 0 0 65px rgba(216, 183, 123, 0.2); }
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.08;
+      font-weight: 500;
+      letter-spacing: -1.5px;
+      margin-bottom: 26px;
+    }
+
+    h1 span {
+      display: block;
+      color: var(--gold-light);
+      font-style: italic;
+    }
+
+    .description {
+      max-width: 540px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.9;
+    }
+
+    .description strong {
+      color: var(--ivory);
+      font-weight: 600;
+    }
+
+    .divider {
+      width: 75px;
+      height: 1px;
+      margin: 38px auto;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .next-step {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+      margin-bottom: 34px;
+    }
+
+    .next-step span {
+      color: var(--gold-light);
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 13px;
+      min-height: 58px;
+      padding: 0 34px;
+      border-radius: 50px;
+      background: linear-gradient(110deg, #d8b77b, #f0d9a9);
+      color: #24152b;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 10px 35px rgba(216, 183, 123, 0.14);
+    }
+
+    .button:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 45px rgba(216, 183, 123, 0.25);
+    }
+
+    .button .arrow {
+      font-size: 18px;
+      transition: transform 0.3s ease;
+    }
+
+    .button:hover .arrow {
+      transform: translateX(5px);
+    }
+
+    footer {
+      padding: 24px;
+      text-align: center;
+      border-top: 1px solid rgba(216, 183, 123, 0.12);
+      position: relative;
+      z-index: 1;
+    }
+
+    footer p {
+      color: #a99ab0;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    footer span {
+      color: var(--gold);
+    }
+
+    @media (max-width: 600px) {
+      .navbar {
+        padding: 23px 6%;
+      }
+
+      .logo img {
+        width: 135px;
+      }
+
+      .nav-label {
+        font-size: 8px;
+        letter-spacing: 1.5px;
+      }
+
+      main {
+        padding: 40px 16px 55px;
+      }
+
+      .confirmation {
+        padding: 52px 23px;
+        border-radius: 24px;
+      }
+
+      .success-icon {
+        width: 78px;
+        height: 78px;
+        font-size: 35px;
+        margin-bottom: 30px;
+      }
+
+      .eyebrow {
+        font-size: 9px;
+        letter-spacing: 2.5px;
+      }
+
+      h1 {
+        font-size: clamp(39px, 11vw, 56px);
+      }
+
+      .description {
+        font-size: 14px;
+      }
+
+      .button {
+        width: 100%;
+        padding: 0 20px;
+        font-size: 10px;
+      }
+
+      footer p {
+        font-size: 9px;
+        letter-spacing: 1.3px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="navbar">
+    <a class="logo" href="https://marianapastean.github.io/arvana-digital-marketing/" aria-label="ARVANA - pagina principal">
+      <img
+        src="https://raw.githubusercontent.com/marianapastean/arvana-digital-marketing/main/Logo%20-%20ARVANA%20Digital%20Marketing%20%281%29.png"
+        alt="ARVANA Digital Marketing"
+      >
+    </a>
+
+    <span class="nav-label">Strategic Marketing & Brand Development</span>
+  </header>
+
+  <main>
+    <section class="confirmation">
+
+      <div class="success-icon" aria-label="Mesaj trimis cu succes">
+        ✓
+      </div>
+
+      <p class="eyebrow">Mesaj transmis cu succes</p>
+
+      <h1>
+        Mulțumesc
+        <span>pentru mesaj!</span>
+      </h1>
+
+      <p class="description">
+        Apreciez interesul tău pentru ARVANA.
+        Mesajul tău a fost transmis cu succes, iar eu îl voi analiza
+        cu atenție pentru a înțelege mai bine nevoile și obiectivele
+        proiectului tău.
+      </p>
+
+      <div class="divider"></div>
+
+      <p class="next-step">
+        Voi reveni în cel mai scurt timp la adresa de e-mail
+        <span>pe care ai furnizat-o în formular.</span>
+        <br>
+        Îți mulțumesc pentru încredere!
+      </p>
+
+      <a
+        class="button"
+        href="https://marianapastean.github.io/arvana-digital-marketing/"
+      >
+        Înapoi la ARVANA
+        <span class="arrow">→</span>
+      </a>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 <span>ARVANA</span> Digital Marketing · Direcție clară. Branduri cu valoare.</p>
+  </footer>
+
+</body>
+</html>
