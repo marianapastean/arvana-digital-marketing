@@ -1,0 +1,2218 @@
+
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090711">
+
+  <title>ARVANA Digital Marketing | Direcție clară. Branduri cu valoare.</title>
+
+  <meta name="description" content="ARVANA Digital Marketing – strategie de marketing, brand development, poziționare, comunicare și strategie de conținut. Direcție clară. Branduri cu valoare.">
+  <meta name="keywords" content="ARVANA, digital marketing, strategie marketing, branding, brand development, brand strategy, marketing strategic">
+  <meta name="author" content="ARVANA Digital Marketing">
+
+  <meta property="og:title" content="ARVANA Digital Marketing">
+  <meta property="og:description" content="Direcție clară. Branduri cu valoare. Strategie, branding și marketing construit în jurul obiectivelor businessului tău.">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #090711;
+      --bg-soft: #100d1c;
+      --surface: #171326;
+      --surface-light: #201a33;
+      --purple: #9565ff;
+      --purple-light: #bd9cff;
+      --lavender: #d7c6ff;
+      --gold: #d5b77b;
+      --white: #f7f4ff;
+      --muted: #a29bb5;
+      --border: rgba(201, 178, 255, .15);
+      --glow: rgba(143, 92, 255, .22);
+      --font: 'Manrope', sans-serif;
+      --mono: 'DM Mono', monospace;
+      --container: 1180px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: var(--font);
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: linear-gradient(to bottom, black, transparent 85%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - 48px));
+      margin: auto;
+    }
+
+    .section {
+      padding: 125px 0;
+      position: relative;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      color: var(--purple-light);
+      margin-bottom: 24px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 27px;
+      height: 1px;
+      background: var(--purple-light);
+    }
+
+    .section-title {
+      font-size: clamp(36px, 5vw, 64px);
+      line-height: 1.12;
+      letter-spacing: -2.5px;
+      font-weight: 700;
+      max-width: 850px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(110deg, #fff 5%, #c6a9ff 48%, #8f62ff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      max-width: 650px;
+      font-size: 16px;
+      margin-top: 24px;
+    }
+
+    /* NAVIGATION */
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 18px 0;
+      transition: .35s ease;
+      border-bottom: 1px solid transparent;
+    }
+
+    .navbar.scrolled {
+      background: rgba(9, 7, 17, .88);
+      backdrop-filter: blur(20px);
+      border-bottom-color: var(--border);
+      padding: 12px 0;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: 5px;
+      color: white;
+    }
+
+    .logo span {
+      color: var(--purple-light);
+    }
+
+    .logo-subtitle {
+      display: block;
+      font-family: var(--mono);
+      font-size: 8px;
+      letter-spacing: 2px;
+      color: var(--muted);
+      margin-top: -5px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      color: #c5bed4;
+      transition: .3s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -7px;
+      height: 1px;
+      width: 0;
+      background: var(--purple-light);
+      transition: .3s;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      padding: 11px 18px;
+      border: 1px solid rgba(189,156,255,.55);
+      color: white;
+      font-size: 11px;
+      letter-spacing: .5px;
+      transition: .3s;
+    }
+
+    .nav-cta:hover {
+      background: var(--purple);
+      box-shadow: 0 0 25px var(--glow);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      color: white;
+      border: 0;
+      font-size: 26px;
+      cursor: pointer;
+    }
+
+    /* BUTTONS */
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 24px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .5px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: .35s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(110deg, #8c59f5, #ad86ff);
+      color: white;
+      box-shadow: 0 8px 30px rgba(125, 73, 255, .2);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(125, 73, 255, .4);
+    }
+
+    .btn-outline {
+      border-color: var(--border);
+      color: white;
+      background: rgba(255,255,255,.025);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--purple-light);
+      background: rgba(149,101,255,.12);
+      transform: translateY(-3px);
+    }
+
+    .arrow {
+      font-size: 17px;
+      transition: transform .3s;
+    }
+
+    .btn:hover .arrow {
+      transform: translateX(5px);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 150px 0 100px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      border-radius: 50%;
+      top: -220px;
+      right: -160px;
+      background: radial-gradient(circle, rgba(112,66,224,.22), transparent 68%);
+      filter: blur(20px);
+      animation: pulse 7s infinite alternate;
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      bottom: -250px;
+      left: -180px;
+      background: radial-gradient(circle, rgba(108,66,210,.15), transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      align-items: center;
+      gap: 50px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid var(--border);
+      padding: 9px 14px;
+      color: #c9b7ed;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 1.4px;
+      margin-bottom: 35px;
+      background: rgba(255,255,255,.025);
+    }
+
+    .live-dot {
+      width: 7px;
+      height: 7px;
+      background: #a889ff;
+      border-radius: 50%;
+      box-shadow: 0 0 12px #a889ff;
+      animation: blink 2s infinite;
+    }
+
+    .hero h1 {
+      font-size: clamp(52px, 7vw, 94px);
+      letter-spacing: -5px;
+      line-height: 1.04;
+      font-weight: 800;
+      max-width: 800px;
+    }
+
+    .hero h1 .outline {
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(210,190,255,.8);
+    }
+
+    .hero-description {
+      max-width: 560px;
+      color: #aaa3ba;
+      font-size: 16px;
+      line-height: 1.9;
+      margin: 30px 0 36px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .hero-note {
+      margin-top: 55px;
+      color: #777086;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 1.4px;
+    }
+
+    /* HERO VISUAL */
+
+    .hero-visual {
+      min-height: 490px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .orbit {
+      position: absolute;
+      width: 390px;
+      height: 390px;
+      border: 1px solid rgba(174,136,255,.2);
+      border-radius: 50%;
+      animation: rotate 28s linear infinite;
+    }
+
+    .orbit::before,
+    .orbit::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(174,136,255,.14);
+    }
+
+    .orbit::before {
+      inset: 35px;
+    }
+
+    .orbit::after {
+      inset: 80px;
+    }
+
+    .orbit-dot {
+      width: 10px;
+      height: 10px;
+      background: var(--purple-light);
+      border-radius: 50%;
+      box-shadow: 0 0 20px var(--purple);
+      position: absolute;
+      top: 55px;
+      left: 45px;
+    }
+
+    .core {
+      width: 205px;
+      height: 205px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%, #c0a0ff, #7947df 45%, #24134d 85%);
+      box-shadow: 0 0 80px rgba(133,86,255,.35), inset -15px -20px 35px rgba(0,0,0,.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .core::after {
+      content: "";
+      position: absolute;
+      inset: -20px;
+      border: 1px solid rgba(187,156,255,.25);
+      border-radius: 50%;
+    }
+
+    .core span {
+      font-size: 43px;
+      font-weight: 800;
+      letter-spacing: 9px;
+      padding-left: 9px;
+      color: white;
+      text-shadow: 0 2px 20px rgba(255,255,255,.5);
+    }
+
+    .floating-card {
+      position: absolute;
+      padding: 13px 17px;
+      border: 1px solid rgba(195,168,255,.2);
+      background: rgba(22,17,39,.8);
+      backdrop-filter: blur(15px);
+      font-size: 10px;
+      letter-spacing: 1px;
+      color: #d7caff;
+      box-shadow: 0 10px 30px rgba(0,0,0,.2);
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .floating-card.one {
+      top: 55px;
+      right: 0;
+      animation-delay: -1s;
+    }
+
+    .floating-card.two {
+      bottom: 85px;
+      left: -5px;
+      animation-delay: -2.5s;
+    }
+
+    .floating-card.three {
+      bottom: 20px;
+      right: 20px;
+      animation-delay: -3.5s;
+    }
+
+    /* TICKER */
+
+    .ticker {
+      overflow: hidden;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+      background: rgba(255,255,255,.015);
+    }
+
+    .ticker-track {
+      display: flex;
+      width: max-content;
+      animation: ticker 35s linear infinite;
+    }
+
+    .ticker-item {
+      padding: 0 35px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #aaa0c1;
+      white-space: nowrap;
+    }
+
+    .ticker-item span {
+      color: var(--purple-light);
+      padding-right: 35px;
+    }
+
+    /* PHILOSOPHY */
+
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 90px;
+      align-items: start;
+    }
+
+    .philosophy-statement {
+      font-size: clamp(27px, 3vw, 40px);
+      line-height: 1.4;
+      letter-spacing: -1.5px;
+      font-weight: 500;
+    }
+
+    .philosophy-statement strong {
+      color: var(--purple-light);
+      font-weight: 600;
+    }
+
+    .philosophy-text {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 2;
+      margin-top: 28px;
+    }
+
+    .principle-list {
+      margin-top: 35px;
+      border-top: 1px solid var(--border);
+    }
+
+    .principle {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      padding: 19px 0;
+      border-bottom: 1px solid var(--border);
+      transition: .3s;
+    }
+
+    .principle:hover {
+      padding-left: 10px;
+      color: var(--purple-light);
+    }
+
+    .principle-number {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--purple-light);
+    }
+
+    .principle-text {
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    /* SERVICES */
+
+    .services-section {
+      background: linear-gradient(180deg, transparent, rgba(48,29,85,.12), transparent);
+    }
+
+    .services-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 17px;
+    }
+
+    .service-card {
+      position: relative;
+      min-height: 320px;
+      padding: 32px;
+      background: linear-gradient(145deg, rgba(31,24,51,.9), rgba(16,13,27,.8));
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: .45s ease;
+    }
+
+    .service-card::before {
+      content: "";
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(147,97,255,.2), transparent 70%);
+      top: -100px;
+      right: -100px;
+      transition: .5s;
+    }
+
+    .service-card:hover {
+      border-color: rgba(189,156,255,.6);
+      transform: translateY(-9px);
+      box-shadow: 0 20px 50px rgba(0,0,0,.25);
+    }
+
+    .service-card:hover::before {
+      transform: scale(1.8);
+    }
+
+    .service-icon {
+      font-size: 27px;
+      color: var(--purple-light);
+      margin-bottom: 38px;
+      display: inline-block;
+      transition: .4s;
+    }
+
+    .service-card:hover .service-icon {
+      transform: rotate(-12deg) scale(1.15);
+    }
+
+    .service-number {
+      position: absolute;
+      top: 28px;
+      right: 28px;
+      color: #75698e;
+      font-family: var(--mono);
+      font-size: 11px;
+    }
+
+    .service-card h3 {
+      font-size: 19px;
+      margin-bottom: 15px;
+      letter-spacing: -.5px;
+    }
+
+    .service-card p {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    .service-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 25px;
+      font-size: 10px;
+      color: var(--purple-light);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* APPROACH */
+
+    .approach-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 100px;
+      align-items: start;
+    }
+
+    .approach-intro {
+      position: sticky;
+      top: 120px;
+    }
+
+    .approach-steps {
+      border-top: 1px solid var(--border);
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      gap: 20px;
+      padding: 35px 0;
+      border-bottom: 1px solid var(--border);
+      transition: .3s;
+    }
+
+    .step:hover {
+      padding-left: 12px;
+    }
+
+    .step-number {
+      font-family: var(--mono);
+      color: var(--purple-light);
+      font-size: 13px;
+      padding-top: 4px;
+    }
+
+    .step h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .step p {
+      color: var(--muted);
+      font-size: 13px;
+      max-width: 560px;
+    }
+
+    /* AUDIT */
+
+    .audit-section {
+      overflow: hidden;
+    }
+
+    .audit-panel {
+      position: relative;
+      padding: 75px;
+      background: linear-gradient(120deg, #20143b, #120d22 65%, #241445);
+      border: 1px solid rgba(190,158,255,.25);
+      overflow: hidden;
+    }
+
+    .audit-panel::before {
+      content: "";
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      right: -180px;
+      top: -300px;
+      background: radial-gradient(circle, rgba(150,97,255,.25), transparent 70%);
+      pointer-events: none;
+    }
+
+    .audit-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .audit-panel h2 {
+      font-size: clamp(35px, 4vw, 54px);
+      line-height: 1.15;
+      letter-spacing: -2px;
+      margin-bottom: 22px;
+    }
+
+    .audit-panel p {
+      color: #b9aecf;
+      font-size: 14px;
+      max-width: 590px;
+      margin-bottom: 30px;
+    }
+
+    .audit-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin: 30px 0;
+    }
+
+    .audit-feature {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #ded5f0;
+      font-size: 12px;
+    }
+
+    .audit-feature span {
+      color: var(--purple-light);
+    }
+
+    .audit-visual {
+      position: relative;
+      padding: 28px;
+      border: 1px solid rgba(195,168,255,.25);
+      background: rgba(9,7,17,.55);
+      backdrop-filter: blur(10px);
+      transform: rotate(3deg);
+      transition: .4s;
+    }
+
+    .audit-visual:hover {
+      transform: rotate(0) scale(1.04);
+    }
+
+    .audit-visual-header {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      color: var(--purple-light);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 15px;
+    }
+
+    .audit-score {
+      font-size: 66px;
+      font-weight: 800;
+      letter-spacing: -4px;
+      margin: 25px 0 0;
+    }
+
+    .audit-score span {
+      font-size: 18px;
+      color: var(--muted);
+      letter-spacing: 0;
+    }
+
+    .score-label {
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    .score-bars {
+      margin-top: 30px;
+    }
+
+    .score-row {
+      margin-bottom: 17px;
+    }
+
+    .score-row-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 10px;
+      color: #bdb2d1;
+      margin-bottom: 7px;
+    }
+
+    .score-track {
+      height: 5px;
+      background: rgba(255,255,255,.1);
+    }
+
+    .score-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #7948dc, #c5a5ff);
+      width: var(--score);
+      animation: grow 2s ease forwards;
+    }
+
+    /* DIFFERENTIATION */
+
+    .difference-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      border: 1px solid var(--border);
+      background: var(--border);
+      margin-top: 55px;
+    }
+
+    .difference-item {
+      padding: 35px 30px;
+      background: var(--bg);
+      transition: .35s;
+    }
+
+    .difference-item:hover {
+      background: #171128;
+    }
+
+    .difference-item h3 {
+      font-size: 17px;
+      margin-bottom: 12px;
+    }
+
+    .difference-item p {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    .difference-symbol {
+      color: var(--purple-light);
+      font-family: var(--mono);
+      font-size: 22px;
+      margin-bottom: 22px;
+    }
+
+    /* FAQ */
+
+    .faq-layout {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 80px;
+    }
+
+    .faq-list {
+      border-top: 1px solid var(--border);
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      color: white;
+      padding: 23px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      gap: 20px;
+    }
+
+    .faq-question span:last-child {
+      color: var(--purple-light);
+      font-size: 22px;
+      transition: .3s;
+    }
+
+    .faq-item.active .faq-question span:last-child {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .4s ease;
+    }
+
+    .faq-answer p {
+      padding: 0 30px 22px 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    /* CONTACT */
+
+    .contact-section {
+      padding-bottom: 140px;
+    }
+
+    .contact-panel {
+      text-align: center;
+      padding: 90px 30px;
+      border: 1px solid var(--border);
+      background:
+        radial-gradient(ellipse at 50% 110%, rgba(128,77,235,.2), transparent 65%),
+        #110d1e;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-panel h2 {
+      font-size: clamp(38px, 5vw, 68px);
+      line-height: 1.12;
+      letter-spacing: -3px;
+      max-width: 850px;
+      margin: 0 auto 25px;
+    }
+
+    .contact-panel p {
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto 35px;
+      font-size: 14px;
+    }
+
+    .contact-note {
+      margin-top: 25px;
+      color: #777086;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 35px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .footer-brand {
+      font-size: 21px;
+      letter-spacing: 4px;
+      font-weight: 800;
+    }
+
+    .footer-brand span {
+      color: var(--purple-light);
+    }
+
+    .footer-copy {
+      font-size: 10px;
+      color: #81798f;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 22px;
+      font-size: 11px;
+      color: #aaa1ba;
+    }
+
+    .footer-links a:hover {
+      color: var(--purple-light);
+    }
+
+    /* BACK TO TOP */
+
+    .back-top {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--border);
+      background: rgba(20,15,34,.9);
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: .3s;
+      z-index: 50;
+    }
+
+    .back-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .back-top:hover {
+      background: var(--purple);
+    }
+
+    /* SCROLL PROGRESS */
+
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      width: 0;
+      background: linear-gradient(90deg, #8350ed, #d0b6ff);
+      z-index: 200;
+    }
+
+    /* REVEAL */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .delay-1 { transition-delay: .12s; }
+    .delay-2 { transition-delay: .24s; }
+    .delay-3 { transition-delay: .36s; }
+
+    /* ANIMATIONS */
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes pulse {
+      from { opacity: .6; transform: scale(.9); }
+      to { opacity: 1; transform: scale(1.1); }
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: .3; }
+    }
+
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    @keyframes grow {
+      from { width: 0; }
+      to { width: var(--score); }
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 950px) {
+      .hero-grid,
+      .philosophy-grid,
+      .approach-grid,
+      .audit-grid,
+      .faq-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        min-height: 430px;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .approach-intro {
+        position: static;
+      }
+
+      .audit-panel {
+        padding: 50px;
+      }
+
+      .audit-visual {
+        max-width: 450px;
+        margin: auto;
+      }
+
+      .philosophy-grid,
+      .approach-grid,
+      .faq-layout {
+        gap: 50px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        width: min(100% - 36px, var(--container));
+      }
+
+      .section {
+        padding: 85px 0;
+      }
+
+      .navbar {
+        padding: 13px 0;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        padding: 25px 24px;
+        background: rgba(12,9,22,.97);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--border);
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 23px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 140px 0 70px;
+      }
+
+      .hero-grid {
+        gap: 25px;
+      }
+
+      .hero h1 {
+        font-size: clamp(49px, 12vw, 70px);
+        letter-spacing: -3.5px;
+      }
+
+      .hero-description {
+        font-size: 14px;
+      }
+
+      .hero-visual {
+        min-height: 350px;
+      }
+
+      .orbit {
+        width: 290px;
+        height: 290px;
+      }
+
+      .core {
+        width: 155px;
+        height: 155px;
+      }
+
+      .core span {
+        font-size: 32px;
+      }
+
+      .floating-card {
+        font-size: 8px;
+        padding: 9px 11px;
+      }
+
+      .floating-card.one {
+        right: 0;
+        top: 35px;
+      }
+
+      .floating-card.two {
+        left: 0;
+        bottom: 55px;
+      }
+
+      .floating-card.three {
+        right: 0;
+        bottom: 10px;
+      }
+
+      .services-header {
+        display: block;
+      }
+
+      .services-grid,
+      .difference-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card {
+        min-height: 270px;
+      }
+
+      .audit-panel {
+        padding: 35px 23px;
+      }
+
+      .audit-features {
+        grid-template-columns: 1fr;
+      }
+
+      .audit-visual {
+        padding: 20px;
+      }
+
+      .audit-score {
+        font-size: 55px;
+      }
+
+      .contact-panel {
+        padding: 65px 22px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .footer-copy {
+        line-height: 1.8;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .hero h1 {
+        font-size: 45px;
+      }
+
+      .floating-card {
+        font-size: 7px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- NAVIGATION -->
+
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+
+      <a href="#home" class="logo">
+        ARVANA<span>.</span>
+        <span class="logo-subtitle">DIGITAL MARKETING</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Deschide meniul" aria-expanded="false">
+        ☰
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">Despre</a></li>
+        <li><a href="#services">Servicii</a></li>
+        <li><a href="#approach">Abordare</a></li>
+        <li><a href="#audit">Audit gratuit</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <a href="#audit" class="nav-cta">DESCOPERĂ AUDITUL ↗</a>
+
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+
+  <main>
+
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+
+        <div class="hero-content reveal">
+
+          <div class="hero-label">
+            <span class="live-dot"></span>
+            STRATEGIC MARKETING & BRAND DEVELOPMENT
+          </div>
+
+          <h1>
+            Beyond<br>
+            <span class="gradient-text">visibility.</span><br>
+            <span class="outline">Build value.</span>
+          </h1>
+
+          <p class="hero-description">
+            Construiesc direcții de brand și marketing pornind de la
+            strategie, claritate și valoare. Pentru mine, un brand
+            puternic nu înseamnă doar să fie văzut, ci să fie înțeles,
+            recunoscut și relevant.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#services" class="btn btn-primary">
+              EXPLOREAZĂ SERVICIILE <span class="arrow">↗</span>
+            </a>
+
+            <a href="https://marianapastean.github.io/arvana-brand-marketing-audit/"
+               target="_blank" rel="noopener noreferrer"
+               class="btn btn-outline">
+              AUDIT GRATUIT <span class="arrow">↗</span>
+            </a>
+          </div>
+
+          <div class="hero-note">
+            STRATEGY FIRST. CLARITY ALWAYS. VALUE IN EVERYTHING.
+          </div>
+
+        </div>
+
+        <div class="hero-visual reveal delay-2">
+
+          <div class="orbit">
+            <div class="orbit-dot"></div>
+          </div>
+
+          <div class="core">
+            <span>A.</span>
+          </div>
+
+          <div class="floating-card one">
+            BRAND STRATEGY
+          </div>
+
+          <div class="floating-card two">
+            DIGITAL PRESENCE
+          </div>
+
+          <div class="floating-card three">
+            BRAND VALUE
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- TICKER -->
+
+    <div class="ticker">
+      <div class="ticker-track">
+        <div class="ticker-item">STRATEGY <span>✦</span></div>
+        <div class="ticker-item">BRANDING <span>✦</span></div>
+        <div class="ticker-item">POSITIONING <span>✦</span></div>
+        <div class="ticker-item">COMMUNICATION <span>✦</span></div>
+        <div class="ticker-item">CONTENT STRATEGY <span>✦</span></div>
+        <div class="ticker-item">MARKETING <span>✦</span></div>
+
+        <div class="ticker-item">STRATEGY <span>✦</span></div>
+        <div class="ticker-item">BRANDING <span>✦</span></div>
+        <div class="ticker-item">POSITIONING <span>✦</span></div>
+        <div class="ticker-item">COMMUNICATION <span>✦</span></div>
+        <div class="ticker-item">CONTENT STRATEGY <span>✦</span></div>
+        <div class="ticker-item">MARKETING <span>✦</span></div>
+      </div>
+    </div>
+
+
+    <!-- ABOUT / PHILOSOPHY -->
+
+    <section class="section" id="about">
+      <div class="container philosophy-grid">
+
+        <div class="reveal">
+
+          <div class="eyebrow">01 / PERSPECTIVA</div>
+
+          <h2 class="section-title">
+            Marketingul are nevoie de
+            <span class="gradient-text">mai mult decât vizibilitate.</span>
+          </h2>
+
+          <p class="section-intro">
+            Are nevoie de direcție, coerență și o înțelegere reală
+            a businessului din spatele brandului.
+          </p>
+
+        </div>
+
+        <div class="reveal delay-1">
+
+          <p class="philosophy-statement">
+            Nu privesc marketingul ca pe o simplă listă de activități.
+            Îl privesc ca pe un proces prin care
+            <strong>clarific, structurez și construiesc valoare.</strong>
+          </p>
+
+          <p class="philosophy-text">
+            Am creat ARVANA ca identitate profesională sub care dezvolt
+            activități de strategie, branding și marketing. În abordarea
+            mea, fiecare decizie trebuie să pornească de la identitatea
+            businessului, publicul căruia i se adresează și obiectivele
+            pe care dorește să le atingă.
+          </p>
+
+          <div class="principle-list">
+
+            <div class="principle">
+              <span class="principle-number">01</span>
+              <span class="principle-text">Înțeleg înainte să recomand.</span>
+            </div>
+
+            <div class="principle">
+              <span class="principle-number">02</span>
+              <span class="principle-text">Strategia înaintea execuției.</span>
+            </div>
+
+            <div class="principle">
+              <span class="principle-number">03</span>
+              <span class="principle-text">Coerență în fiecare punct de contact.</span>
+            </div>
+
+            <div class="principle">
+              <span class="principle-number">04</span>
+              <span class="principle-text">Valoare înaintea vizibilității.</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- SERVICES -->
+
+    <section class="section services-section" id="services">
+      <div class="container">
+
+        <div class="services-header reveal">
+
+          <div>
+            <div class="eyebrow">02 / CE FAC</div>
+
+            <h2 class="section-title">
+              Strategie transformată în
+              <span class="gradient-text">direcție.</span>
+            </h2>
+
+            <p class="section-intro">
+              Abordez marketingul prin componente care se completează
+              reciproc. Fiecare proiect începe cu înțelegerea nevoilor
+              businessului și definirea priorităților.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="services-grid">
+
+          <article class="service-card reveal">
+            <span class="service-number">01 / 06</span>
+            <span class="service-icon">✳</span>
+
+            <h3>Marketing Strategy</h3>
+
+            <p>
+              Clarific direcția de marketing, obiectivele, prioritățile
+              și canalele potrivite pentru dezvoltarea businessului.
+            </p>
+
+            <span class="service-link">DIRECȚIE STRATEGICĂ ↗</span>
+          </article>
+
+
+          <article class="service-card reveal delay-1">
+            <span class="service-number">02 / 06</span>
+            <span class="service-icon">◈</span>
+
+            <h3>Brand Strategy & Positioning</h3>
+
+            <p>
+              Lucrez la definirea poziționării, propunerii de valoare,
+              publicului-țintă și elementelor care diferențiază brandul.
+            </p>
+
+            <span class="service-link">IDENTITATE CLARĂ ↗</span>
+          </article>
+
+
+          <article class="service-card reveal delay-2">
+            <span class="service-number">03 / 06</span>
+            <span class="service-icon">⌘</span>
+
+            <h3>Brand Development</h3>
+
+            <p>
+              Structurez direcția de dezvoltare a brandului, personalitatea,
+              identitatea și coerența elementelor care îl reprezintă.
+            </p>
+
+            <span class="service-link">BRAND CU VALOARE ↗</span>
+          </article>
+
+
+          <article class="service-card reveal">
+            <span class="service-number">04 / 06</span>
+            <span class="service-icon">◎</span>
+
+            <h3>Marketing Communication</h3>
+
+            <p>
+              Clarific mesajele și tonul comunicării, astfel încât
+              brandul să transmită consecvent ceea ce îl reprezintă.
+            </p>
+
+            <span class="service-link">MESAJ RELEVANT ↗</span>
+          </article>
+
+
+          <article class="service-card reveal delay-1">
+            <span class="service-number">05 / 06</span>
+            <span class="service-icon">⌁</span>
+
+            <h3>Content Strategy</h3>
+
+            <p>
+              Definesc direcții editoriale, piloni de conținut și
+              obiective pentru o comunicare organizată și relevantă.
+            </p>
+
+            <span class="service-link">CONȚINUT CU SCOP ↗</span>
+          </article>
+
+
+          <article class="service-card reveal delay-2">
+            <span class="service-number">06 / 06</span>
+            <span class="service-icon">⟡</span>
+
+            <h3>Brand & Marketing Analysis</h3>
+
+            <p>
+              Analizez coerența brandului și activitatea de marketing
+              pentru a identifica puncte forte, neclarități și oportunități.
+            </p>
+
+            <span class="service-link">CLARITATE ȘI ANALIZĂ ↗</span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- APPROACH -->
+
+    <section class="section" id="approach">
+      <div class="container approach-grid">
+
+        <div class="approach-intro reveal">
+
+          <div class="eyebrow">03 / CUM LUCREZ</div>
+
+          <h2 class="section-title">
+            Fiecare direcție bună începe cu
+            <span class="gradient-text">întrebările potrivite.</span>
+          </h2>
+
+          <p class="section-intro">
+            Nu pornesc de la soluții standard. Încep prin a înțelege
+            contextul, provocările și obiectivele businessului.
+          </p>
+
+        </div>
+
+        <div class="approach-steps">
+
+          <div class="step reveal">
+            <span class="step-number">01</span>
+            <div>
+              <h3>Discovery & Understanding</h3>
+              <p>
+                Înțeleg businessul, oferta, publicul, poziționarea actuală
+                și provocările care influențează dezvoltarea brandului.
+              </p>
+            </div>
+          </div>
+
+          <div class="step reveal">
+            <span class="step-number">02</span>
+            <div>
+              <h3>Analysis & Clarity</h3>
+              <p>
+                Analizez identitatea, comunicarea și activitățile de marketing.
+                Identific elementele care funcționează și zonele care necesită
+                mai multă claritate.
+              </p>
+            </div>
+          </div>
+
+          <div class="step reveal">
+            <span class="step-number">03</span>
+            <div>
+              <h3>Strategy & Direction</h3>
+              <p>
+                Stabilesc prioritățile și direcțiile strategice în funcție
+                de obiectivele businessului și resursele disponibile.
+              </p>
+            </div>
+          </div>
+
+          <div class="step reveal">
+            <span class="step-number">04</span>
+            <div>
+              <h3>Development & Optimization</h3>
+              <p>
+                Transform direcția stabilită în acțiuni coerente și urmăresc
+                oportunitățile de optimizare pe parcurs.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- AUDIT -->
+
+    <section class="section audit-section" id="audit">
+      <div class="container">
+
+        <div class="audit-panel reveal">
+
+          <div class="audit-grid">
+
+            <div>
+
+              <div class="eyebrow">04 / FREE STRATEGIC TOOL</div>
+
+              <h2>
+                Cât de bine este construit
+                <span class="gradient-text">brandul tău?</span>
+              </h2>
+
+              <p>
+                Am creat ARVANA BRAND & MARKETING AUDIT pentru antreprenorii
+                care vor să obțină o imagine mai clară asupra brandului
+                și activității lor de marketing.
+              </p>
+
+              <div class="audit-features">
+
+                <div class="audit-feature">
+                  <span>✦</span> 15 întrebări
+                </div>
+
+                <div class="audit-feature">
+                  <span>✦</span> 5 dimensiuni
+                </div>
+
+                <div class="audit-feature">
+                  <span>✦</span> Scor general
+                </div>
+
+                <div class="audit-feature">
+                  <span>✦</span> Recomandări orientative
+                </div>
+
+              </div>
+
+              <a href="https://marianapastean.github.io/arvana-brand-marketing-audit/"
+                 target="_blank" rel="noopener noreferrer"
+                 class="btn btn-primary">
+                ÎNCEPE AUDITUL GRATUIT <span class="arrow">↗</span>
+              </a>
+
+            </div>
+
+
+            <div class="audit-visual">
+
+              <div class="audit-visual-header">
+                ARVANA / BRAND & MARKETING AUDIT
+              </div>
+
+              <div class="audit-score">
+                05<span> / DIMENSIONS</span>
+              </div>
+
+              <div class="score-label">
+                A FIRST LOOK AT YOUR BRAND FOUNDATION
+              </div>
+
+              <div class="score-bars">
+
+                <div class="score-row">
+                  <div class="score-row-label">
+                    <span>POSITIONING</span>
+                    <span>01</span>
+                  </div>
+                  <div class="score-track">
+                    <div class="score-fill" style="--score: 90%"></div>
+                  </div>
+                </div>
+
+                <div class="score-row">
+                  <div class="score-row-label">
+                    <span>BRAND IDENTITY</span>
+                    <span>02</span>
+                  </div>
+                  <div class="score-track">
+                    <div class="score-fill" style="--score: 80%"></div>
+                  </div>
+                </div>
+
+                <div class="score-row">
+                  <div class="score-row-label">
+                    <span>COMMUNICATION</span>
+                    <span>03</span>
+                  </div>
+                  <div class="score-track">
+                    <div class="score-fill" style="--score: 75%"></div>
+                  </div>
+                </div>
+
+                <div class="score-row">
+                  <div class="score-row-label">
+                    <span>CONTENT STRATEGY</span>
+                    <span>04</span>
+                  </div>
+                  <div class="score-track">
+                    <div class="score-fill" style="--score: 65%"></div>
+                  </div>
+                </div>
+
+                <div class="score-row">
+                  <div class="score-row-label">
+                    <span>MARKETING STRATEGY</span>
+                    <span>05</span>
+                  </div>
+                  <div class="score-track">
+                    <div class="score-fill" style="--score: 85%"></div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- DIFFERENTIATION -->
+
+    <section class="section">
+      <div class="container">
+
+        <div class="reveal">
+
+          <div class="eyebrow">05 / PRINCIPII</div>
+
+          <h2 class="section-title">
+            Nu construiesc doar prezență.
+            Construiesc
+            <span class="gradient-text">direcție.</span>
+          </h2>
+
+          <p class="section-intro">
+            Acestea sunt principiile care îmi ghidează perspectiva
+            asupra brandingului și marketingului.
+          </p>
+
+        </div>
+
+        <div class="difference-grid">
+
+          <div class="difference-item reveal">
+            <div class="difference-symbol">01 /</div>
+            <h3>Strategic thinking</h3>
+            <p>
+              Analizez înainte să propun. Fiecare decizie trebuie
+              să aibă un context și un obiectiv.
+            </p>
+          </div>
+
+          <div class="difference-item reveal delay-1">
+            <div class="difference-symbol">02 /</div>
+            <h3>Clarity over complexity</h3>
+            <p>
+              Caut simplitatea în strategie și claritatea în comunicare.
+              Un mesaj bun trebuie să poată fi înțeles.
+            </p>
+          </div>
+
+          <div class="difference-item reveal delay-2">
+            <div class="difference-symbol">03 /</div>
+            <h3>Consistency matters</h3>
+            <p>
+              Construiesc direcții în care identitatea, mesajele
+              și experiența brandului sunt conectate.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- FAQ -->
+
+    <section class="section" id="faq">
+      <div class="container faq-layout">
+
+        <div class="reveal">
+
+          <div class="eyebrow">06 / FAQ</div>
+
+          <h2 class="section-title">
+            Întrebări
+            <span class="gradient-text">frecvente.</span>
+          </h2>
+
+          <p class="section-intro">
+            Câteva răspunsuri care te pot ajuta să înțelegi
+            mai bine perspectiva și activitatea ARVANA.
+          </p>
+
+        </div>
+
+        <div class="faq-list reveal delay-1">
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Ce este ARVANA Digital Marketing?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                ARVANA este brandul sub care dezvolt activități de
+                strategie de marketing, branding și brand development.
+                Abordarea mea este orientată spre înțelegerea businessului
+                și construirea unei direcții coerente.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Cu ce tipuri de businessuri pot lucra?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Sunt interesată de colaborări cu antreprenori și businessuri
+                din domenii diferite, care vor să își clarifice poziționarea,
+                identitatea și direcția de marketing.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Trebuie să am deja un brand construit?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Nu. O colaborare poate porni de la clarificarea unei idei
+                de business sau de la analiza și dezvoltarea unui brand
+                deja existent. Direcția depinde de obiectivele proiectului.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Pot începe cu auditul gratuit?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Da. ARVANA BRAND & MARKETING AUDIT este un instrument
+                gratuit de autoevaluare. Prin 15 întrebări poți obține
+                o perspectivă orientativă asupra a cinci dimensiuni
+                importante ale brandului și marketingului tău.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>Oferă ARVANA doar servicii de social media?</span>
+              <span>+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Perspectiva mea este mai largă decât administrarea
+                paginilor sociale. Pun accent pe strategie, poziționare,
+                brand development, comunicare și conținut construit
+                în jurul obiectivelor businessului.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="section contact-section" id="contact">
+      <div class="container">
+
+        <div class="contact-panel reveal">
+
+          <div class="eyebrow">07 / NEXT STEP</div>
+
+          <h2>
+            Un brand puternic începe cu
+            <span class="gradient-text">o direcție clară.</span>
+          </h2>
+
+          <p>
+            Dacă simți că businessul tău are nevoie de mai multă claritate
+            în branding sau marketing, primul pas este să înțelegi unde
+            te afli și ce vrei să construiești.
+          </p>
+
+          <a href="https://marianapastean.github.io/arvana-brand-marketing-audit/"
+             target="_blank" rel="noopener noreferrer"
+             class="btn btn-primary">
+            DESCOPERĂ AUDITUL GRATUIT <span class="arrow">↗</span>
+          </a>
+
+          <div class="contact-note">
+            ARVANA DIGITAL MARKETING / DIRECȚIE CLARĂ. BRANDURI CU VALOARE.
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+    <div class="container footer-inner">
+
+      <div>
+        <div class="footer-brand">ARVANA<span>.</span></div>
+        <div class="footer-copy">
+          Strategic Marketing & Brand Development
+        </div>
+      </div>
+
+      <div class="footer-copy">
+        © <span id="year"></span> ARVANA Digital Marketing. Toate drepturile rezervate.
+      </div>
+
+      <div class="footer-links">
+        <a href="#home">Acasă</a>
+        <a href="#services">Servicii</a>
+        <a href="#audit">Audit gratuit</a>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <button class="back-top" id="backTop" aria-label="Înapoi sus">↑</button>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    // NAVIGATION SCROLL EFFECT
+
+    const navbar = document.getElementById("navbar");
+    const progressBar = document.getElementById("progressBar");
+    const backTop = document.getElementById("backTop");
+
+    window.addEventListener("scroll", () => {
+
+      const scrollTop = window.scrollY;
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+
+      navbar.classList.toggle("scrolled", scrollTop > 40);
+      backTop.classList.toggle("visible", scrollTop > 500);
+
+      const progress = maxScroll > 0 ? (scrollTop / maxScroll) * 100 : 0;
+      progressBar.style.width = progress + "%";
+
+    });
+
+
+    // MOBILE MENU
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+
+      const isOpen = navLinks.classList.toggle("open");
+
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.textContent = isOpen ? "×" : "☰";
+
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+      link.addEventListener("click", () => {
+
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰";
+
+      });
+
+    });
+
+
+    // SCROLL REVEAL
+
+    const observer = new IntersectionObserver((entries) => {
+
+      entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+
+        }
+
+      });
+
+    }, {
+      threshold: 0.12
+    });
+
+    document.querySelectorAll(".reveal").forEach(element => {
+      observer.observe(element);
+    });
+
+
+    // FAQ ACCORDION
+
+    document.querySelectorAll(".faq-question").forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        const item = button.parentElement;
+        const answer = item.querySelector(".faq-answer");
+        const isActive = item.classList.contains("active");
+
+        document.querySelectorAll(".faq-item").forEach(other => {
+
+          other.classList.remove("active");
+          other.querySelector(".faq-answer").style.maxHeight = null;
+
+        });
+
+        if (!isActive) {
+
+          item.classList.add("active");
+          answer.style.maxHeight = answer.scrollHeight + "px";
+
+        }
+
+      });
+
+    });
+
+
+    // BACK TO TOP
+
+    backTop.addEventListener("click", () => {
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+    });
+
+
+    // FOOTER YEAR
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+
+  </script>
+
+</body>
+</html>
