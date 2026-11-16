@@ -4,37 +4,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#281A33">
+  <meta name="theme-color" content="#F4EFE6">
 
   <title>ARVANA Digital Marketing | Direcție clară. Branduri cu valoare.</title>
-  <meta name="description" content="ARVANA Digital Marketing. Strategie de marketing, poziționare de brand, comunicare și dezvoltare strategică. Direcție clară. Branduri cu valoare.">
+
+  <meta name="description" content="ARVANA Digital Marketing – strategie de marketing, poziționare de brand, comunicare și dezvoltare strategică pentru afaceri care vor să crească prin direcție și claritate.">
+
+  <meta property="og:title" content="ARVANA Digital Marketing">
+  <meta property="og:description" content="Direcție clară. Branduri cu valoare.">
+  <meta property="og:type" content="website">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --background: #24152F;
-      --background-soft: #2B1B36;
-      --surface: #352441;
-      --surface-light: #493258;
-      --purple: #76558D;
-      --purple-light: #A58BB7;
-      --lavender: #D8C8E1;
-      --gold: #D6B477;
-      --gold-light: #F0DDB8;
-      --ivory: #FFF9F0;
-      --muted: #D8CCDF;
-      --line: rgba(214,180,119,.24);
-      --serif: "Playfair Display", serif;
-      --sans: "DM Sans", sans-serif;
+      --ivory: #F4EFE6;
+      --ivory-light: #FFFDF9;
+      --aubergine: #321B3D;
+      --aubergine-deep: #24132D;
+      --plum: #563665;
+      --plum-light: #735582;
+      --lavender: #D8C5E1;
+      --gold: #B99A62;
+      --gold-light: #D7BD8C;
+      --text-light: #F8F2F8;
+      --text-muted: #D3C4D7;
+      --dark-text: #321B3D;
+      --border-light: rgba(185,154,98,.35);
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+      --container: 1200px;
     }
 
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     html {
@@ -43,22 +50,11 @@
     }
 
     body {
-      background: var(--background);
-      color: var(--ivory);
       font-family: var(--sans);
+      background: var(--aubergine);
+      color: var(--text-light);
+      line-height: 1.7;
       overflow-x: hidden;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      pointer-events: none;
-      background:
-        radial-gradient(ellipse at 12% 12%, rgba(118,85,141,.19), transparent 35%),
-        radial-gradient(ellipse at 90% 55%, rgba(214,180,119,.055), transparent 35%),
-        linear-gradient(135deg, #24152F, #30203C 52%, #24152F);
     }
 
     a {
@@ -66,259 +62,307 @@
       text-decoration: none;
     }
 
-    button, input, textarea, select {
+    button,
+    input,
+    textarea,
+    select {
       font: inherit;
     }
 
-    button, a {
+    button,
+    a {
       -webkit-tap-highlight-color: transparent;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
     }
 
     ::selection {
       background: var(--gold);
-      color: var(--background);
+      color: var(--aubergine-deep);
     }
 
     .container {
-      width: min(1240px, 88%);
-      margin: auto;
+      width: min(var(--container), calc(100% - 48px));
+      margin-inline: auto;
     }
 
-    .section {
-      padding: 120px 0;
-      position: relative;
-    }
-
-    .section-label {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 25px;
-      color: var(--gold-light);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
-
-    .section-label::before {
-      content: "";
-      width: 38px;
-      height: 1px;
-      background: var(--gold);
-      flex-shrink: 0;
-    }
-
-    .section-title {
-      max-width: 900px;
-      font-family: var(--serif);
-      font-size: clamp(43px, 6.2vw, 76px);
-      font-weight: 500;
-      line-height: 1.12;
-      letter-spacing: -1.5px;
-    }
-
-    .section-title em {
-      color: var(--gold-light);
-      font-weight: 400;
-    }
-
-    .section-description {
-      max-width: 650px;
-      margin-top: 25px;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.95;
-    }
-
-    /* LOGO */
-
-    .brand-logo {
+    .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      min-width: 0;
-    }
-
-    .brand-logo img {
-      width: 155px;
-      height: 58px;
-      object-fit: contain;
-      object-position: left center;
-    }
-
-    .logo-fallback {
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      line-height: 1;
-    }
-
-    .logo-fallback strong {
-      font-family: var(--serif);
       color: var(--gold-light);
-      font-size: 31px;
-      font-weight: 500;
-      letter-spacing: 3px;
-    }
-
-    .logo-fallback span {
-      margin-top: 6px;
-      color: var(--ivory);
-      font-size: 7px;
-      letter-spacing: 2px;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .2em;
       text-transform: uppercase;
     }
 
-    /* HEADER / NAVIGATION */
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: var(--gold);
+    }
 
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
+    .section {
+      position: relative;
+      padding: 115px 0;
+      overflow: hidden;
+    }
+
+    .section-heading {
+      max-width: 790px;
+      margin-bottom: 55px;
+    }
+
+    .section-heading h2 {
+      margin-top: 20px;
+      font-family: var(--serif);
+      font-size: clamp(2.5rem, 5vw, 4.6rem);
+      line-height: 1.12;
+      font-weight: 500;
+      letter-spacing: -.035em;
+    }
+
+    .section-heading p {
+      max-width: 680px;
+      margin-top: 22px;
+      color: var(--text-muted);
+      font-size: 1.08rem;
+    }
+
+    .gold-text {
+      color: var(--gold-light);
+    }
+
+    .purple-text {
+      color: var(--plum);
+    }
+
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      min-height: 54px;
+      padding: 15px 25px;
+      border: 1px solid var(--gold);
+      border-radius: 4px;
+      background: var(--gold);
+      color: var(--aubergine-deep);
+      font-weight: 700;
+      font-size: .84rem;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      transition: transform .3s ease, background .3s ease, box-shadow .3s ease;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      transform: translateY(-4px);
+      background: var(--gold-light);
+      box-shadow: 0 12px 30px rgba(185,154,98,.2);
+    }
+
+    .button-outline {
+      background: transparent;
+      color: var(--ivory);
+      border-color: rgba(215,189,140,.7);
+    }
+
+    .button-outline:hover {
+      background: var(--ivory);
+      color: var(--aubergine);
+    }
+
+    /* HEADER */
+
+    .site-header {
+      position: sticky;
       z-index: 1000;
+      top: 0;
       width: 100%;
-      padding: 13px 0;
-      background: rgba(40,26,51,.97);
-      border-bottom: 1px solid rgba(214,180,119,.20);
-      transition: padding .3s ease, box-shadow .3s ease;
+      background: var(--ivory);
+      border-bottom: 1px solid var(--border-light);
+      box-shadow: 0 5px 25px rgba(36,19,45,.05);
     }
 
-    .navbar.scrolled {
-      padding: 9px 0;
-      box-shadow: 0 12px 35px rgba(0,0,0,.17);
-    }
-
-    .nav-inner {
-      width: min(1400px, 90%);
-      margin: auto;
+    .nav-container {
+      min-height: 92px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 25px;
     }
 
+    .brand {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+      min-width: 0;
+    }
+
+    .brand-logo {
+      display: block;
+      width: 190px;
+      max-width: 100%;
+      height: 76px;
+      object-fit: contain;
+      object-position: left center;
+    }
+
+    .brand-fallback {
+      display: none;
+      color: var(--aubergine);
+      font-family: var(--serif);
+      font-size: 2rem;
+      line-height: 1;
+      letter-spacing: .08em;
+      font-weight: 700;
+    }
+
+    .brand-fallback small {
+      display: block;
+      margin-top: 7px;
+      font-family: var(--sans);
+      font-size: .55rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 28px;
+      gap: clamp(16px, 2.4vw, 34px);
     }
 
     .nav-links a {
-      color: #E8DFEB;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 1px;
-      transition: color .3s ease;
+      position: relative;
+      color: var(--aubergine);
+      font-size: .82rem;
+      font-weight: 700;
+      transition: color .25s ease;
+    }
+
+    .nav-links a:not(.nav-cta)::after {
+      position: absolute;
+      content: "";
+      left: 0;
+      bottom: -8px;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: width .3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
     }
 
     .nav-links a:hover {
-      color: var(--gold-light);
+      color: var(--plum);
     }
 
     .nav-links .nav-cta {
-      padding: 13px 21px;
-      border: 1px solid rgba(214,180,119,.58);
-      border-radius: 40px;
-      color: var(--gold-light);
+      padding: 12px 17px;
+      border: 1px solid var(--gold);
+      background: var(--aubergine);
+      color: var(--ivory);
+      transition: all .3s ease;
     }
 
     .nav-links .nav-cta:hover {
       background: var(--gold);
-      color: var(--background);
+      color: var(--aubergine);
     }
 
     .menu-toggle {
       display: none;
-      width: 43px;
-      height: 43px;
-      border: 1px solid var(--line);
-      border-radius: 50%;
+      width: 46px;
+      height: 46px;
+      border: 1px solid var(--border-light);
+      border-radius: 4px;
       background: transparent;
-      color: var(--gold-light);
-      font-size: 22px;
+      color: var(--aubergine);
       cursor: pointer;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 21px;
+      height: 2px;
+      margin: 5px auto;
+      background: currentColor;
+      transition: transform .3s ease, opacity .3s ease;
+    }
+
+    .menu-toggle[aria-expanded="true"] span:first-child {
+      transform: translateY(3.5px) rotate(45deg);
+    }
+
+    .menu-toggle[aria-expanded="true"] span:last-child {
+      transform: translateY(-3.5px) rotate(-45deg);
     }
 
     /* HERO */
 
     .hero {
-      min-height: 100vh;
-      min-height: 100svh;
+      position: relative;
+      min-height: 760px;
       display: flex;
       align-items: center;
-      padding: 145px 0 100px;
-      position: relative;
+      padding: 100px 0 110px;
+      background:
+        radial-gradient(ellipse at 85% 30%, rgba(115,85,130,.35), transparent 38%),
+        radial-gradient(ellipse at 5% 100%, rgba(86,54,101,.38), transparent 40%),
+        var(--aubergine);
       overflow: hidden;
     }
 
     .hero::before {
       content: "";
       position: absolute;
-      width: 650px;
-      height: 650px;
-      right: -170px;
-      top: 10%;
+      width: 620px;
+      height: 620px;
+      right: -260px;
+      top: 30px;
+      border: 1px solid rgba(215,189,140,.15);
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(118,85,141,.25), transparent 68%);
-      pointer-events: none;
+      box-shadow:
+        0 0 0 55px rgba(215,189,140,.025),
+        0 0 0 110px rgba(215,189,140,.02);
+      animation: orbit 28s linear infinite;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      right: 8%;
+      bottom: -170px;
+      border: 1px solid rgba(215,189,140,.25);
+      border-radius: 50%;
     }
 
     .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr .85fr;
-      align-items: center;
-      gap: 35px;
-    }
-
-    .hero-copy {
       position: relative;
-      z-index: 2;
-    }
-
-    .hero-kicker {
-      display: flex;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 70px;
       align-items: center;
-      gap: 14px;
-      margin-bottom: 28px;
     }
 
-    .hero-kicker::before {
-      content: "";
-      width: 42px;
-      height: 1px;
-      background: var(--gold);
-    }
-
-    .hero-kicker span {
-      color: var(--gold-light);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
-
-    .hero-subtitle {
-      margin-bottom: 20px;
-      color: #E8DFEB;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
+    .hero-content {
+      max-width: 760px;
     }
 
     .hero h1 {
-      margin-bottom: 30px;
+      margin-top: 27px;
       font-family: var(--serif);
-      font-size: clamp(65px, 8.5vw, 112px);
+      font-size: clamp(3.5rem, 7.3vw, 7rem);
       font-weight: 500;
+      letter-spacing: -.055em;
       line-height: .99;
-      letter-spacing: -3px;
     }
 
     .hero h1 span {
@@ -327,886 +371,752 @@
       font-style: italic;
     }
 
+    .hero-subtitle {
+      margin-top: 27px;
+      color: var(--lavender);
+      font-size: clamp(.85rem, 1.5vw, 1rem);
+      font-weight: 700;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+
     .hero-description {
-      max-width: 570px;
-      color: var(--muted);
-      font-size: 16px;
+      max-width: 610px;
+      margin-top: 24px;
+      color: var(--text-muted);
+      font-size: 1.12rem;
       line-height: 1.9;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 35px;
+      gap: 15px;
+      margin-top: 38px;
     }
 
-    .btn {
-      min-height: 56px;
-      padding: 0 27px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 13px;
-      border-radius: 50px;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      transition: transform .3s ease, box-shadow .3s ease, background .3s ease;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background: linear-gradient(110deg, #D6B477, #F0DDB8);
-      color: var(--background);
-      box-shadow: 0 12px 35px rgba(214,180,119,.14);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 18px 40px rgba(214,180,119,.27);
-    }
-
-    .btn-outline {
-      border: 1px solid rgba(214,180,119,.55);
-      background: rgba(255,255,255,.025);
-      color: var(--gold-light);
-    }
-
-    .btn-outline:hover {
-      transform: translateY(-4px);
-      background: rgba(214,180,119,.10);
-    }
-
-    .btn-arrow {
-      font-size: 18px;
-      transition: transform .3s ease;
-    }
-
-    .btn:hover .btn-arrow {
-      transform: translateX(4px);
-    }
-
-    /* HERO VISUAL */
-
-    .hero-visual {
-      min-height: 510px;
+    .hero-note {
+      margin-top: 40px;
       display: flex;
       align-items: center;
-      justify-content: center;
+      gap: 13px;
+      color: var(--text-muted);
+      font-size: .82rem;
+    }
+
+    .hero-note::before {
+      content: "";
+      width: 35px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    /* HERO STRATEGY VISUAL */
+
+    .strategy-visual {
       position: relative;
+      width: min(100%, 410px);
+      aspect-ratio: 1;
+      margin-inline: auto;
+      display: grid;
+      place-items: center;
     }
 
-    .orbit {
+    .strategy-ring {
       position: absolute;
-      width: 420px;
-      height: 420px;
-      border: 1px solid rgba(214,180,119,.25);
+      width: 88%;
+      height: 88%;
+      border: 1px solid rgba(215,189,140,.4);
       border-radius: 50%;
-      animation: orbit 32s linear infinite;
+      animation: orbit 35s linear infinite;
     }
 
-    .orbit::before {
+    .strategy-ring::before,
+    .strategy-ring::after {
       content: "";
       position: absolute;
-      top: 48px;
-      left: 50%;
-      width: 10px;
-      height: 10px;
+      inset: 13%;
+      border: 1px solid rgba(215,189,140,.2);
       border-radius: 50%;
-      background: var(--gold);
-      box-shadow: 0 0 22px var(--gold);
     }
 
-    .orbit-two {
-      width: 330px;
-      height: 330px;
-      border-color: rgba(213,194,226,.24);
-      animation-direction: reverse;
-      animation-duration: 25s;
+    .strategy-ring::after {
+      inset: 28%;
     }
 
-    .orbit-three {
-      width: 245px;
-      height: 245px;
-      border-style: dashed;
-      border-color: rgba(214,180,119,.19);
-      animation-duration: 40s;
-    }
-
-    @keyframes orbit {
-      to { transform: rotate(360deg); }
-    }
-
-    .hero-core {
-      width: 190px;
-      height: 190px;
-      border: 1px solid rgba(240,221,184,.6);
-      border-radius: 50%;
+    .strategy-core {
+      position: relative;
+      z-index: 2;
+      width: 155px;
+      height: 155px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background: radial-gradient(circle at 30% 25%, rgba(255,255,255,.2), transparent 35%), linear-gradient(145deg,#76558D,#352044 75%);
-      box-shadow: 0 0 0 15px rgba(214,180,119,.035), 0 0 75px rgba(118,85,141,.4);
-      animation: coreFloat 6s ease-in-out infinite;
-      z-index: 2;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      background: linear-gradient(145deg, #684879, #321B3D 70%);
+      box-shadow: 0 0 65px rgba(185,154,98,.15);
+      text-align: center;
     }
 
-    .hero-core strong {
+    .strategy-core strong {
       font-family: var(--serif);
-      font-size: 30px;
+      font-size: 1.6rem;
       font-weight: 500;
-      letter-spacing: 2px;
     }
 
-    .hero-core span {
-      margin-top: 8px;
+    .strategy-core small {
+      margin-top: 3px;
       color: var(--gold-light);
-      font-size: 8px;
-      letter-spacing: 2px;
+      font-size: .58rem;
+      letter-spacing: .16em;
       text-transform: uppercase;
     }
 
-    @keyframes coreFloat {
-      0%,100% { transform: translateY(0); }
-      50% { transform: translateY(-11px); }
-    }
-
-    .orbit-tag {
+    .orbit-node {
       position: absolute;
       z-index: 3;
-      padding: 12px 17px;
-      border: 1px solid rgba(214,180,119,.35);
-      border-radius: 40px;
-      background: #352441;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 90px;
+      height: 90px;
+      border: 1px solid rgba(215,189,140,.65);
+      border-radius: 50%;
+      background: rgba(50,27,61,.95);
       color: var(--gold-light);
-      font-size: 9px;
+      text-align: center;
+      font-size: .68rem;
       font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      box-shadow: 0 10px 30px rgba(0,0,0,.2);
-      animation: tagFloat 5s ease-in-out infinite;
+      letter-spacing: .05em;
+      box-shadow: 0 12px 35px rgba(0,0,0,.15);
+      animation: float 5s ease-in-out infinite;
     }
 
-    .tag-one { top: 12%; left: 4%; }
-    .tag-two { top: 25%; right: -2%; animation-delay: -1s; }
-    .tag-three { bottom: 20%; left: 0; animation-delay: -3s; }
-    .tag-four { bottom: 9%; right: 6%; animation-delay: -2s; }
-
-    @keyframes tagFloat {
-      0%,100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-    }
+    .node-one { top: 0; left: 42%; }
+    .node-two { right: 0; top: 38%; animation-delay: -1s; }
+    .node-three { bottom: 2%; left: 39%; animation-delay: -2s; }
+    .node-four { left: 0; top: 38%; animation-delay: -3s; }
 
     /* INTRO */
 
     .intro-section {
-      padding: 90px 0;
-      background: rgba(255,255,255,.018);
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
+      background: var(--ivory);
+      color: var(--dark-text);
     }
 
     .intro-grid {
       display: grid;
-      grid-template-columns: .75fr 1.25fr;
-      gap: 65px;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 90px;
       align-items: start;
     }
 
-    .intro-number {
-      color: rgba(214,180,119,.22);
-      font-family: var(--serif);
-      font-size: clamp(90px,14vw,155px);
-      line-height: 1;
+    .intro-aside {
+      position: sticky;
+      top: 135px;
     }
 
-    .intro-copy h2 {
-      font-family: var(--serif);
-      font-size: clamp(38px,5vw,60px);
-      font-weight: 500;
-      line-height: 1.2;
+    .intro-aside .eyebrow {
+      color: var(--plum);
     }
 
-    .intro-copy h2 em {
-      color: var(--gold-light);
-    }
-
-    .intro-copy p:not(.section-label) {
+    .intro-aside h2 {
       margin-top: 22px;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.95;
+      font-family: var(--serif);
+      font-size: clamp(2.8rem, 5vw, 4.6rem);
+      line-height: 1.1;
+      font-weight: 500;
     }
 
-    /* ABOUT */
+    .intro-aside h2 span {
+      color: var(--gold);
+      font-style: italic;
+    }
 
-    .about-grid {
+    .intro-copy p {
+      margin-bottom: 22px;
+      color: #68586E;
+      font-size: 1.08rem;
+    }
+
+    .intro-copy p strong {
+      color: var(--aubergine);
+    }
+
+    .principle-card {
+      margin-top: 38px;
+      padding: 28px 30px;
+      border-left: 3px solid var(--gold);
+      background: rgba(86,54,101,.07);
+    }
+
+    .principle-card strong {
+      display: block;
+      color: var(--aubergine);
+      font-family: var(--serif);
+      font-size: 1.55rem;
+      font-weight: 500;
+    }
+
+    .principle-card span {
+      display: block;
+      margin-top: 8px;
+      color: #76677A;
+      font-size: .92rem;
+    }
+
+    /* SERVICES */
+
+    .services-section {
+      background:
+        radial-gradient(ellipse at 100% 0%, rgba(115,85,130,.22), transparent 35%),
+        var(--aubergine);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .service-card {
+      position: relative;
+      min-height: 295px;
+      padding: 30px 25px;
+      border: 1px solid rgba(215,189,140,.25);
+      background: rgba(255,255,255,.035);
+      transition: transform .35s ease, background .35s ease, border-color .35s ease;
+      overflow: hidden;
+    }
+
+    .service-card::after {
+      content: "";
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      right: -80px;
+      bottom: -80px;
+      border: 1px solid rgba(215,189,140,.18);
+      border-radius: 50%;
+      transition: transform .5s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-9px);
+      background: rgba(115,85,130,.2);
+      border-color: var(--gold);
+    }
+
+    .service-card:hover::after {
+      transform: scale(2);
+    }
+
+    .service-number {
+      color: var(--gold-light);
+      font-family: var(--serif);
+      font-size: 2rem;
+    }
+
+    .service-card h3 {
+      margin-top: 25px;
+      font-family: var(--serif);
+      font-size: 1.45rem;
+      font-weight: 500;
+      line-height: 1.25;
+    }
+
+    .service-card p {
+      margin-top: 15px;
+      color: var(--text-muted);
+      font-size: .9rem;
+      line-height: 1.8;
+    }
+
+    /* MARKETING FUNNEL */
+
+    .funnel-section {
+      background: var(--aubergine-deep);
+    }
+
+    .funnel-layout {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 75px;
+      align-items: center;
+    }
+
+    .funnel-copy h2 {
+      margin-top: 20px;
+      font-family: var(--serif);
+      font-size: clamp(2.6rem, 5vw, 4.5rem);
+      line-height: 1.1;
+      font-weight: 500;
+    }
+
+    .funnel-copy p {
+      margin-top: 24px;
+      color: var(--text-muted);
+      font-size: 1.03rem;
+    }
+
+    .funnel-visual {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .funnel-stage {
+      position: relative;
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 17px 25px;
+      border: 1px solid rgba(215,189,140,.65);
+      background: linear-gradient(100deg, rgba(115,85,130,.8), rgba(86,54,101,.6));
+      color: var(--ivory-light);
+      transition: transform .3s ease, background .3s ease;
+    }
+
+    .funnel-stage:hover {
+      transform: scale(1.025);
+      background: linear-gradient(100deg, #735582, #563665);
+    }
+
+    .funnel-stage:nth-child(1) { width: 100%; }
+    .funnel-stage:nth-child(2) { width: 86%; }
+    .funnel-stage:nth-child(3) { width: 72%; }
+    .funnel-stage:nth-child(4) { width: 58%; }
+
+    .funnel-stage strong {
+      font-family: var(--serif);
+      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      font-weight: 500;
+      overflow-wrap: anywhere;
+    }
+
+    .funnel-stage span {
+      flex-shrink: 0;
+      color: var(--gold-light);
+      font-size: .72rem;
+      letter-spacing: .1em;
+    }
+
+    .funnel-caption {
+      margin-top: 22px;
+      color: var(--text-muted);
+      font-size: .83rem;
+      text-align: center;
+    }
+
+    /* CONTENT STRATEGY */
+
+    .content-section {
+      background: var(--ivory);
+      color: var(--dark-text);
+    }
+
+    .content-section .eyebrow {
+      color: var(--plum);
+    }
+
+    .content-section .section-heading p {
+      color: #76677A;
+    }
+
+    .content-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 70px;
       align-items: center;
     }
 
-    .about-visual {
-      min-height: 460px;
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-      background: radial-gradient(circle at 50% 40%,rgba(118,85,141,.4),transparent 55%), linear-gradient(145deg,#493258,#2B1B36);
+    .content-matrix {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 12px;
+      transform: rotate(-2deg);
     }
 
-    .about-visual::before,
-    .about-visual::after {
-      content: "";
-      position: absolute;
-      width: 310px;
-      height: 310px;
-      border: 1px solid rgba(214,180,119,.25);
-      border-radius: 50%;
-    }
-
-    .about-visual::after {
-      width: 225px;
-      height: 225px;
-      border-color: rgba(213,194,226,.3);
-    }
-
-    .about-sphere {
-      width: 165px;
-      height: 165px;
-      border-radius: 50%;
+    .matrix-cell {
+      min-height: 155px;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(145deg,#E2C58F,#76558D 78%);
-      box-shadow: 0 0 65px rgba(214,180,119,.2);
-      z-index: 2;
-    }
-
-    .about-sphere strong {
-      color: var(--background);
-      font-family: var(--serif);
-      font-size: 27px;
-      font-weight: 600;
-    }
-
-    .about-sphere span {
-      margin-top: 6px;
-      color: var(--background);
-      font-size: 8px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-
-    .about-orbit-label {
-      position: absolute;
-      z-index: 3;
-      color: var(--gold-light);
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    .about-orbit-label.one { top: 18%; left: 14%; }
-    .about-orbit-label.two { top: 22%; right: 12%; }
-    .about-orbit-label.three { bottom: 20%; left: 12%; }
-    .about-orbit-label.four { bottom: 17%; right: 12%; }
-
-    .about-copy p:not(.section-label) {
-      margin-top: 22px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.95;
-    }
-
-    .about-principles {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-top: 30px;
-    }
-
-    .principle {
-      padding: 17px;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: rgba(255,255,255,.025);
-      transition: .3s;
-    }
-
-    .principle:hover {
-      transform: translateY(-4px);
-      background: rgba(214,180,119,.07);
-    }
-
-    .principle strong {
-      display: block;
-      margin-bottom: 7px;
-      color: var(--gold-light);
-      font-size: 11px;
-    }
-
-    .principle span {
-      color: var(--muted);
-      font-size: 10px;
-      line-height: 1.7;
-    }
-
-    /* SERVICES */
-
-    .services-section {
-      background: rgba(255,255,255,.018);
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .services-heading {
-      display: flex;
-      align-items: end;
       justify-content: space-between;
-      gap: 40px;
-      margin-bottom: 55px;
+      padding: 22px;
+      border: 1px solid rgba(50,27,61,.15);
+      background: var(--ivory-light);
+      box-shadow: 0 10px 35px rgba(50,27,61,.06);
+      transition: transform .3s ease, background .3s ease;
     }
 
-    .services-heading .section-description {
-      max-width: 390px;
-      margin-top: 0;
+    .matrix-cell:hover {
+      transform: translateY(-6px) rotate(1deg);
+      background: #F1E8F2;
     }
 
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(4,1fr);
-      gap: 16px;
-    }
-
-    .service-card {
-      min-height: 300px;
-      padding: 26px 23px;
-      position: relative;
-      overflow: hidden;
-      border: 1px solid rgba(214,180,119,.22);
-      border-radius: 21px;
-      background: linear-gradient(145deg,rgba(81,50,100,.48),rgba(43,27,54,.8));
-      transition: transform .4s ease, border-color .4s ease, box-shadow .4s ease;
-    }
-
-    .service-card::before {
-      content: "";
-      position: absolute;
-      top: -90px;
-      right: -90px;
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      background: rgba(214,180,119,.09);
-      transition: .5s;
-    }
-
-    .service-card:hover {
-      transform: translateY(-8px);
-      border-color: rgba(214,180,119,.65);
-      box-shadow: 0 22px 55px rgba(0,0,0,.22);
-    }
-
-    .service-card:hover::before {
-      width: 220px;
-      height: 220px;
-    }
-
-    .service-number {
-      margin-bottom: 22px;
-      color: rgba(240,221,184,.6);
+    .matrix-cell span {
+      color: var(--gold);
       font-family: var(--serif);
-      font-size: 29px;
+      font-size: 1.6rem;
     }
 
-    .service-icon {
-      width: 42px;
-      height: 42px;
-      margin-bottom: 19px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid var(--line);
-      border-radius: 50%;
-      color: var(--gold-light);
-      font-size: 19px;
-      transition: .3s;
-    }
-
-    .service-card:hover .service-icon {
-      transform: rotate(12deg);
-      background: var(--gold);
-      color: var(--background);
-    }
-
-    .service-card h3 {
-      position: relative;
-      z-index: 1;
-      margin-bottom: 12px;
+    .matrix-cell strong {
+      color: var(--aubergine);
       font-family: var(--serif);
-      font-size: 22px;
+      font-size: 1.3rem;
       font-weight: 500;
-      line-height: 1.3;
     }
 
-    .service-card p {
-      position: relative;
-      z-index: 1;
-      color: var(--muted);
-      font-size: 11px;
-      line-height: 1.85;
-    }
-
-    /* FUNNEL */
-
-    .funnel-layout {
-      display: grid;
-      grid-template-columns: .8fr 1.2fr;
-      gap: 65px;
-      align-items: center;
-    }
-
-    .funnel-intro p:not(.section-label) {
-      margin-top: 22px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.95;
-    }
-
-    .funnel-note {
-      margin-top: 30px;
-      padding: 18px 20px;
-      border-left: 2px solid var(--gold);
-      background: rgba(214,180,119,.06);
-      color: var(--muted);
-      font-size: 11px;
-      line-height: 1.8;
-    }
-
-    .funnel-visual {
-      padding: 32px;
-      border: 1px solid var(--line);
-      border-radius: 27px;
-      background: linear-gradient(145deg,rgba(81,50,100,.48),rgba(36,21,47,.72));
-    }
-
-    .funnel-stage {
-      width: 100%;
-      min-height: 88px;
-      margin: 0 auto 12px;
-      padding: 15px 22px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 15px;
-      border: 1px solid rgba(240,221,184,.4);
-      border-radius: 15px;
-      background: linear-gradient(110deg,#76558D,#352044);
-      animation: funnelGlow 5s ease-in-out infinite;
-      transition: transform .3s ease;
-    }
-
-    .funnel-stage:nth-child(2) {
-      width: 88%;
-      animation-delay: .5s;
-      background: linear-gradient(110deg,#76558D,#493258);
-    }
-
-    .funnel-stage:nth-child(3) {
-      width: 76%;
-      animation-delay: 1s;
-      background: linear-gradient(110deg,#76558D,#493258);
-    }
-
-    .funnel-stage:nth-child(4) {
-      width: 64%;
-      animation-delay: 1.5s;
-      background: linear-gradient(110deg,#D6B477,#F0DDB8);
-      color: var(--background);
-    }
-
-    .funnel-stage:last-of-type {
-      margin-bottom: 0;
-    }
-
-    .funnel-stage:hover {
-      transform: scale(1.025);
-    }
-
-    .funnel-stage strong {
-      display: block;
+    .content-copy h3 {
       font-family: var(--serif);
-      font-size: clamp(17px,2vw,24px);
+      font-size: 2.25rem;
       font-weight: 500;
-      line-height: 1.25;
-      overflow-wrap: anywhere;
+      line-height: 1.2;
     }
 
-    .funnel-stage span {
-      display: block;
-      margin-top: 5px;
-      font-size: 10px;
-      line-height: 1.5;
+    .content-copy p {
+      margin-top: 20px;
+      color: #76677A;
     }
 
-    .funnel-stage .stage-number {
-      flex-shrink: 0;
-      font-family: var(--serif);
-      font-size: 24px;
+    .content-list {
+      display: grid;
+      gap: 13px;
+      margin-top: 28px;
+      list-style: none;
     }
 
-    @keyframes funnelGlow {
-      0%,100% { box-shadow: 0 0 0 rgba(214,180,119,0); }
-      50% { box-shadow: 0 0 20px rgba(214,180,119,.12); }
+    .content-list li {
+      display: flex;
+      gap: 13px;
+      color: var(--aubergine);
+      font-size: .94rem;
     }
 
-    .funnel-caption {
-      margin-top: 22px;
-      color: var(--muted);
-      font-size: 9px;
-      text-align: center;
-      letter-spacing: 1.3px;
-      text-transform: uppercase;
+    .content-list li::before {
+      content: "✦";
+      color: var(--gold);
     }
 
     /* PROCESS */
 
     .process-section {
-      background: linear-gradient(180deg,rgba(81,50,100,.15),transparent);
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .process-heading {
-      margin-bottom: 55px;
+      background: var(--aubergine);
     }
 
     .process-grid {
       display: grid;
-      grid-template-columns: repeat(4,1fr);
-      gap: 15px;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 20px;
     }
 
     .process-card {
-      min-height: 275px;
-      padding: 27px 24px;
       position: relative;
-      border: 1px solid var(--line);
-      border-radius: 21px;
-      background: rgba(255,255,255,.025);
-      transition: .35s;
+      padding: 28px 22px;
+      min-height: 270px;
+      border-top: 1px solid var(--gold);
+      background: rgba(255,255,255,.035);
     }
 
-    .process-card:hover {
-      transform: translateY(-7px);
-      background: rgba(118,85,141,.17);
-    }
-
-    .process-card::after {
-      content: "";
-      position: absolute;
-      top: 35px;
-      right: 25px;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--gold);
-      box-shadow: 0 0 17px rgba(214,180,119,.7);
-    }
-
-    .process-number {
-      margin-bottom: 35px;
-      color: rgba(214,180,119,.4);
+    .process-card .number {
+      color: var(--gold-light);
       font-family: var(--serif);
-      font-size: 52px;
-      line-height: 1;
+      font-size: 2.8rem;
     }
 
     .process-card h3 {
-      margin-bottom: 13px;
-      color: var(--gold-light);
+      margin-top: 23px;
       font-family: var(--serif);
-      font-size: 23px;
+      font-size: 1.55rem;
       font-weight: 500;
     }
 
     .process-card p {
-      color: var(--muted);
-      font-size: 11px;
-      line-height: 1.85;
+      margin-top: 12px;
+      color: var(--text-muted);
+      font-size: .9rem;
+    }
+
+    .process-line {
+      height: 2px;
+      margin-top: 30px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      transform-origin: left;
+      animation: linePulse 4s ease-in-out infinite;
     }
 
     /* AUDIT */
 
     .audit-section {
-      padding: 125px 0;
+      position: relative;
+      background:
+        radial-gradient(circle at 90% 50%, rgba(185,154,98,.12), transparent 30%),
+        var(--ivory);
+      color: var(--aubergine);
     }
 
     .audit-card {
-      padding: 70px;
-      position: relative;
-      overflow: hidden;
-      border: 1px solid rgba(214,180,119,.4);
-      border-radius: 31px;
-      background:
-        radial-gradient(circle at 85% 15%,rgba(214,180,119,.13),transparent 30%),
-        radial-gradient(circle at 15% 90%,rgba(118,85,141,.32),transparent 40%),
-        linear-gradient(135deg,#493258,#2B1B36);
-      box-shadow: 0 30px 90px rgba(0,0,0,.18);
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 55px;
+      align-items: center;
+      padding: clamp(30px, 6vw, 75px);
+      border: 1px solid rgba(185,154,98,.6);
+      background: var(--ivory-light);
+      box-shadow: 0 25px 80px rgba(50,27,61,.07);
     }
 
-    .audit-card::after {
-      content: "";
-      position: absolute;
-      right: -150px;
-      bottom: -220px;
-      width: 360px;
-      height: 360px;
-      border: 1px solid rgba(214,180,119,.2);
-      border-radius: 50%;
-      box-shadow: 0 0 0 35px rgba(214,180,119,.025), 0 0 0 70px rgba(214,180,119,.02);
-    }
-
-    .audit-content {
-      max-width: 760px;
-      position: relative;
-      z-index: 2;
+    .audit-card .eyebrow {
+      color: var(--plum);
     }
 
     .audit-card h2 {
-      margin: 22px 0;
+      margin-top: 22px;
       font-family: var(--serif);
-      font-size: clamp(44px,6vw,74px);
+      font-size: clamp(2.6rem, 5vw, 4.5rem);
       font-weight: 500;
       line-height: 1.1;
     }
 
-    .audit-card h2 em {
-      color: var(--gold-light);
-    }
-
-    .audit-card p:not(.section-label) {
+    .audit-card p {
+      margin-top: 22px;
+      color: #76677A;
       max-width: 650px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.95;
     }
 
     .audit-features {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 28px 0 33px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 30px 0;
     }
 
-    .audit-features span {
-      padding: 10px 15px;
-      border: 1px solid rgba(214,180,119,.35);
-      border-radius: 30px;
-      background: rgba(255,255,255,.035);
-      color: var(--gold-light);
-      font-size: 9px;
+    .audit-feature {
+      padding: 13px;
+      border: 1px solid rgba(50,27,61,.12);
+      color: var(--aubergine);
+      font-size: .83rem;
       font-weight: 600;
+    }
+
+    .audit-visual {
+      position: relative;
+      width: min(100%, 330px);
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      margin: auto;
+      border: 1px solid rgba(185,154,98,.55);
+      border-radius: 50%;
+      background: radial-gradient(circle, #F4EFE6, #E9DFE9);
+    }
+
+    .audit-visual::before,
+    .audit-visual::after {
+      position: absolute;
+      content: "";
+      inset: 12%;
+      border: 1px solid rgba(185,154,98,.55);
+      border-radius: 50%;
+      animation: orbit 20s linear infinite;
+    }
+
+    .audit-visual::after {
+      inset: 25%;
+      animation-direction: reverse;
+    }
+
+    .audit-visual strong {
+      position: relative;
+      z-index: 1;
+      color: var(--aubergine);
+      font-family: var(--serif);
+      font-size: 5rem;
+      font-weight: 500;
+    }
+
+    .audit-visual span {
+      position: absolute;
+      z-index: 2;
+      bottom: 25%;
+      padding: 7px 14px;
+      background: var(--gold);
+      color: var(--aubergine);
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .15em;
     }
 
     /* CONTACT */
 
     .contact-section {
-      background: rgba(255,255,255,.018);
-      border-top: 1px solid var(--line);
+      background: var(--aubergine-deep);
     }
 
     .contact-grid {
       display: grid;
-      grid-template-columns: .85fr 1.15fr;
-      gap: 65px;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 80px;
       align-items: start;
     }
 
-    .contact-copy p:not(.section-label) {
-      margin-top: 22px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.95;
+    .contact-copy h2 {
+      margin-top: 20px;
+      font-family: var(--serif);
+      font-size: clamp(2.8rem, 5vw, 4.7rem);
+      font-weight: 500;
+      line-height: 1.1;
     }
 
-    .contact-detail {
-      margin-top: 30px;
-      padding: 22px;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      background: rgba(255,255,255,.025);
+    .contact-copy p {
+      margin-top: 23px;
+      color: var(--text-muted);
     }
 
-    .contact-detail span {
-      display: block;
-      margin-bottom: 9px;
+    .contact-email {
+      display: inline-block;
+      margin-top: 28px;
       color: var(--gold-light);
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    .contact-detail a {
-      color: var(--ivory);
-      font-size: 13px;
+      font-size: 1rem;
       overflow-wrap: anywhere;
     }
 
     .contact-form {
-      padding: 35px;
-      border: 1px solid var(--line);
-      border-radius: 25px;
-      background: linear-gradient(145deg,rgba(81,50,100,.42),rgba(36,21,47,.7));
-    }
-
-    .form-heading {
-      margin-bottom: 10px;
-      font-family: var(--serif);
-      font-size: 30px;
-      font-weight: 500;
-    }
-
-    .form-intro {
-      margin-bottom: 25px;
-      color: var(--muted);
-      font-size: 11px;
-      line-height: 1.8;
+      padding: clamp(25px, 4vw, 45px);
+      border: 1px solid rgba(215,189,140,.35);
+      background: rgba(255,255,255,.045);
     }
 
     .form-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 15px;
+      gap: 17px;
     }
 
-    .form-group {
-      margin-bottom: 18px;
+    .form-field {
+      margin-bottom: 20px;
     }
 
-    .form-group label {
+    .form-field label {
       display: block;
-      margin-bottom: 9px;
-      color: var(--gold-light);
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
+      margin-bottom: 8px;
+      color: var(--ivory);
+      font-size: .8rem;
+      font-weight: 600;
     }
 
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
+    .form-field input,
+    .form-field textarea,
+    .form-field select {
       width: 100%;
-      min-height: 52px;
+      min-height: 51px;
       padding: 13px 15px;
-      border: 1px solid rgba(214,180,119,.27);
-      border-radius: 11px;
+      border: 1px solid rgba(215,189,140,.35);
+      border-radius: 2px;
       outline: none;
-      background: rgba(20,12,27,.42);
+      background: rgba(255,255,255,.07);
       color: var(--ivory);
-      font-size: 12px;
-      transition: border-color .3s ease, box-shadow .3s ease;
+      transition: border-color .3s ease, background .3s ease;
     }
 
-    .form-group input::placeholder,
-    .form-group textarea::placeholder {
-      color: #C5B7CE;
+    .form-field input:focus,
+    .form-field textarea:focus,
+    .form-field select:focus {
+      border-color: var(--gold-light);
+      background: rgba(255,255,255,.1);
     }
 
-    .form-group input:focus,
-    .form-group textarea:focus,
-    .form-group select:focus {
-      border-color: var(--gold);
-      box-shadow: 0 0 0 3px rgba(214,180,119,.09);
+    .form-field input::placeholder,
+    .form-field textarea::placeholder {
+      color: #BCAFC1;
     }
 
-    .form-group select option {
-      background: var(--background-soft);
-      color: var(--ivory);
+    .form-field select option {
+      color: var(--aubergine);
+      background: var(--ivory);
     }
 
-    .form-group textarea {
-      min-height: 130px;
+    .form-field textarea {
+      min-height: 145px;
       resize: vertical;
+    }
+
+    .form-note {
+      margin-top: 16px;
+      color: var(--text-muted);
+      font-size: .75rem;
     }
 
     .form-submit {
       width: 100%;
-      border: 0;
-    }
-
-    .form-privacy {
-      margin-top: 15px;
-      color: #C5B7CE;
-      font-size: 9px;
-      line-height: 1.8;
+      margin-top: 5px;
     }
 
     /* FOOTER */
 
-    footer {
-      background: #281A33;
-      border-top: 1px solid rgba(214,180,119,.23);
+    .site-footer {
+      padding: 45px 0 25px;
+      background: var(--ivory);
+      color: var(--aubergine);
+      border-top: 1px solid var(--border-light);
     }
 
-    .footer-main {
-      min-height: 125px;
+    .footer-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 25px;
-      padding: 28px 0;
+      gap: 30px;
+      padding-bottom: 30px;
     }
 
-    .footer-slogan {
-      color: var(--gold-light);
-      font-family: var(--serif);
-      font-size: 22px;
-      font-style: italic;
-      text-align: right;
+    .footer-brand {
+      display: flex;
+      align-items: center;
+    }
+
+    .footer-brand .brand-logo {
+      width: 190px;
+      height: 75px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+    }
+
+    .footer-links a {
+      color: var(--aubergine);
+      font-size: .82rem;
+      font-weight: 600;
+    }
+
+    .footer-links a:hover {
+      color: var(--plum);
     }
 
     .footer-bottom {
-      min-height: 65px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
       gap: 20px;
-      border-top: 1px solid rgba(214,180,119,.15);
+      padding-top: 22px;
+      border-top: 1px solid rgba(50,27,61,.15);
+      color: #786A7D;
+      font-size: .75rem;
     }
 
-    .footer-bottom p {
-      color: #D8CCDF;
-      font-size: 9px;
-      letter-spacing: .7px;
-      line-height: 1.8;
-    }
-
-    .footer-bottom a {
-      color: var(--gold-light);
-      font-size: 9px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    /* REVEAL */
+    /* REVEAL ANIMATIONS */
 
     .reveal {
       opacity: 0;
-      transform: translateY(28px);
+      transform: translateY(25px);
       transition: opacity .8s ease, transform .8s ease;
     }
 
@@ -1215,169 +1125,271 @@
       transform: translateY(0);
     }
 
-    .delay-1 { transition-delay: .12s; }
-    .delay-2 { transition-delay: .24s; }
-    .delay-3 { transition-delay: .36s; }
+    @keyframes orbit {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-11px); }
+    }
+
+    @keyframes linePulse {
+      0%, 100% { transform: scaleX(.45); opacity: .45; }
+      50% { transform: scaleX(1); opacity: 1; }
+    }
 
     /* RESPONSIVE */
 
-    @media (max-width: 1050px) {
-      .nav-links { gap: 17px; }
-      .nav-links a { font-size: 9px; }
-      .services-grid { grid-template-columns: repeat(2,1fr); }
-      .process-grid { grid-template-columns: repeat(2,1fr); }
-      .hero-grid { gap: 10px; }
-      .hero-visual { transform: scale(.9); }
+    @media (max-width: 1000px) {
+      .nav-links {
+        gap: 16px;
+      }
+
+      .nav-links a {
+        font-size: .75rem;
+      }
+
+      .brand-logo {
+        width: 160px;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+      }
+
+      .hero-grid {
+        gap: 30px;
+      }
+
+      .intro-grid,
+      .funnel-layout,
+      .contact-grid {
+        gap: 45px;
+      }
     }
 
     @media (max-width: 760px) {
-      .container { width: 90%; }
-      .section { padding: 85px 0; }
+      html {
+        scroll-padding-top: 78px;
+      }
 
-      .navbar { padding: 11px 0; }
-      .brand-logo img { width: 135px; height: 51px; }
+      .container {
+        width: min(100% - 34px, var(--container));
+      }
+
+      .section {
+        padding: 78px 0;
+      }
+
+      .nav-container {
+        min-height: 76px;
+      }
+
+      .brand-logo {
+        width: 155px;
+        height: 65px;
+      }
 
       .menu-toggle {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        display: block;
+        flex-shrink: 0;
       }
 
       .nav-links {
         position: absolute;
-        top: calc(100% + 8px);
-        left: 5%;
-        width: 90%;
-        padding: 20px;
-        display: none;
+        top: 100%;
+        left: 0;
+        right: 0;
+        display: flex;
         flex-direction: column;
         align-items: stretch;
         gap: 0;
-        border: 1px solid var(--line);
-        border-radius: 18px;
-        background: #281A33;
-        box-shadow: 0 20px 50px rgba(0,0,0,.3);
+        padding: 10px 24px 20px;
+        background: var(--ivory);
+        border-top: 1px solid var(--border-light);
+        box-shadow: 0 18px 25px rgba(36,19,45,.1);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: opacity .25s ease, transform .25s ease, visibility .25s ease;
       }
 
-      .nav-links.open { display: flex; }
+      .nav-links.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
 
       .nav-links a {
-        padding: 15px 8px;
-        border-bottom: 1px solid rgba(214,180,119,.12);
-        font-size: 11px;
+        padding: 14px 3px;
+        border-bottom: 1px solid rgba(50,27,61,.1);
+        font-size: .9rem;
+      }
+
+      .nav-links a::after {
+        display: none;
       }
 
       .nav-links .nav-cta {
-        margin-top: 13px;
+        margin-top: 12px;
+        padding: 13px 16px;
         text-align: center;
+        border: 1px solid var(--gold);
       }
 
       .hero {
         min-height: auto;
-        padding: 135px 0 75px;
+        padding: 85px 0 80px;
       }
 
       .hero-grid {
         grid-template-columns: 1fr;
-        gap: 0;
+        gap: 55px;
       }
 
       .hero h1 {
-        font-size: clamp(60px,12vw,88px);
-        letter-spacing: -2px;
+        font-size: clamp(3.3rem, 13vw, 5.3rem);
       }
 
-      .hero-description { font-size: 14px; }
+      .hero-description {
+        font-size: 1rem;
+      }
 
-      .hero-visual {
-        min-height: 390px;
-        margin: -5px -35px 0;
-        transform: scale(.83);
+      .strategy-visual {
+        width: min(90%, 350px);
+      }
+
+      .strategy-core {
+        width: 125px;
+        height: 125px;
+      }
+
+      .strategy-core strong {
+        font-size: 1.3rem;
+      }
+
+      .orbit-node {
+        width: 75px;
+        height: 75px;
+        font-size: .58rem;
+      }
+
+      .intro-grid,
+      .funnel-layout,
+      .content-grid,
+      .audit-card,
+      .contact-grid {
+        grid-template-columns: 1fr;
       }
 
       .intro-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
+        gap: 30px;
       }
 
-      .intro-number { font-size: 90px; }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
+      .intro-aside {
+        position: static;
       }
 
-      .about-visual {
-        min-height: 370px;
-        order: 2;
-      }
-
-      .services-heading {
-        display: block;
-      }
-
-      .services-heading .section-description {
-        margin-top: 20px;
+      .services-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
       }
 
       .service-card {
-        min-height: 285px;
-        padding: 22px 18px;
+        min-height: 260px;
+        padding: 23px 18px;
       }
 
-      .service-card h3 { font-size: 20px; }
+      .service-card h3 {
+        font-size: 1.25rem;
+      }
 
       .funnel-layout {
-        grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 45px;
       }
-
-      .funnel-visual { padding: 22px 13px; }
 
       .funnel-stage {
-        min-height: 80px;
-        padding: 14px;
+        min-height: 68px;
+        padding: 14px 17px;
       }
 
-      .funnel-stage:nth-child(2) { width: 94%; }
-      .funnel-stage:nth-child(3) { width: 86%; }
-      .funnel-stage:nth-child(4) { width: 78%; }
+      .funnel-stage:nth-child(1) { width: 100%; }
+      .funnel-stage:nth-child(2) { width: 92%; }
+      .funnel-stage:nth-child(3) { width: 84%; }
+      .funnel-stage:nth-child(4) { width: 76%; }
 
-      .process-grid { grid-template-columns: 1fr 1fr; }
+      .funnel-stage strong {
+        font-size: clamp(.95rem, 4vw, 1.25rem);
+      }
 
-      .audit-card { padding: 48px 30px; }
+      .funnel-stage span {
+        font-size: .62rem;
+      }
+
+      .content-grid {
+        gap: 45px;
+      }
+
+      .content-matrix {
+        max-width: 500px;
+        margin-inline: auto;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .process-card {
+        min-height: 245px;
+      }
+
+      .audit-card {
+        gap: 45px;
+      }
+
+      .audit-visual {
+        width: min(75%, 280px);
+      }
 
       .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 38px;
+        gap: 35px;
       }
 
-      .footer-main {
+      .footer-top {
         flex-direction: column;
         align-items: flex-start;
       }
 
-      .footer-slogan {
-        text-align: left;
+      .footer-bottom {
+        flex-direction: column;
       }
     }
 
     @media (max-width: 480px) {
+      .section {
+        padding: 65px 0;
+      }
+
+      .section-heading {
+        margin-bottom: 35px;
+      }
+
+      .section-heading h2 {
+        font-size: 2.55rem;
+      }
+
       .hero h1 {
-        font-size: clamp(55px,12.5vw,70px);
+        font-size: 3.25rem;
       }
 
       .hero-actions {
         flex-direction: column;
-        align-items: stretch;
       }
 
-      .hero-actions .btn { width: 100%; }
-
-      .hero-visual {
-        min-height: 340px;
-        margin: -15px -60px;
-        transform: scale(.74);
+      .hero-actions .button {
+        width: 100%;
       }
 
       .services-grid,
@@ -1385,79 +1397,67 @@
         grid-template-columns: 1fr;
       }
 
-      .service-card { min-height: 235px; }
-      .process-card { min-height: 220px; }
-
-      .about-principles { grid-template-columns: 1fr; }
-      .about-visual { min-height: 320px; }
-
-      .about-visual::before {
-        width: 250px;
-        height: 250px;
+      .service-card {
+        min-height: 225px;
       }
 
-      .about-visual::after {
-        width: 190px;
-        height: 190px;
+      .process-card {
+        min-height: auto;
       }
-
-      .about-sphere {
-        width: 145px;
-        height: 145px;
-      }
-
-      .about-orbit-label { font-size: 8px; }
-
-      .funnel-visual { padding: 18px 9px; }
 
       .funnel-stage {
-        min-height: 76px;
-        padding: 12px 10px;
+        gap: 8px;
+        padding: 13px 11px;
+      }
+
+      .funnel-stage strong {
+        font-size: .9rem;
+      }
+
+      .funnel-stage span {
+        font-size: .55rem;
+      }
+
+      .content-matrix {
         gap: 8px;
       }
 
-      .funnel-stage strong { font-size: 17px; }
-      .funnel-stage span { font-size: 8px; }
-      .funnel-stage .stage-number { font-size: 19px; }
-
-      .audit-card {
-        padding: 39px 22px;
-        border-radius: 24px;
+      .matrix-cell {
+        min-height: 125px;
+        padding: 15px;
       }
 
-      .audit-features { gap: 8px; }
-
-      .audit-features span {
-        padding: 9px 11px;
-        font-size: 8px;
+      .matrix-cell strong {
+        font-size: 1.1rem;
       }
 
-      .contact-form { padding: 24px 18px; }
-      .form-row { grid-template-columns: 1fr; }
-
-      .footer-bottom {
-        padding: 18px 0;
-        flex-direction: column;
-        align-items: flex-start;
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
       }
 
-      .footer-slogan { font-size: 19px; }
-    }
+      .audit-features {
+        grid-template-columns: 1fr;
+      }
 
-    @media (max-width: 360px) {
-      .brand-logo img { width: 120px; }
-      .hero h1 { font-size: 52px; }
-      .hero-visual { transform: scale(.66); }
+      .footer-links {
+        gap: 14px;
+      }
+
+      .brand-logo,
+      .footer-brand .brand-logo {
+        width: 145px;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
       *,
       *::before,
       *::after {
+        scroll-behavior: auto !important;
         animation-duration: .01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: .01ms !important;
-        scroll-behavior: auto !important;
       }
 
       .reveal {
@@ -1471,19 +1471,19 @@
 <body>
 
   <!-- HEADER -->
+  <header class="site-header">
+    <div class="container nav-container">
 
-  <nav class="navbar" id="navbar">
-    <div class="nav-inner">
-
-      <a href="#acasa" class="brand-logo" aria-label="ARVANA - Pagina principală">
+      <a href="#acasa" class="brand" aria-label="ARVANA – pagina principală">
         <img
+          class="brand-logo"
           src="./Logo%20-%20ARVANA%20Digital%20Marketing%20%281%29.png"
           alt="ARVANA Digital Marketing"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
         >
-        <span class="logo-fallback">
-          <strong>ARVANA</strong>
-          <span>Digital Marketing</span>
+        <span class="brand-fallback">
+          ARVANA
+          <small>Digital Marketing</small>
         </span>
       </a>
 
@@ -1492,568 +1492,510 @@
         id="menuToggle"
         aria-label="Deschide meniul"
         aria-expanded="false"
-        aria-controls="navLinks"
-      >☰</button>
+        aria-controls="mainNav"
+      >
+        <span></span>
+        <span></span>
+      </button>
 
-      <div class="nav-links" id="navLinks">
+      <nav class="nav-links" id="mainNav" aria-label="Navigare principală">
         <a href="#despre">Despre</a>
         <a href="#servicii">Servicii</a>
-        <a href="#logica">Strategie</a>
+        <a href="#proces">Abordare</a>
         <a href="#audit">Audit gratuit</a>
-        <a href="#contact" class="nav-cta">Contact</a>
-      </div>
+        <a href="#contact" class="nav-cta">Hai să discutăm</a>
+      </nav>
 
     </div>
-  </nav>
+  </header>
 
-  <!-- HERO -->
+  <main>
 
-  <section class="hero" id="acasa">
-    <div class="container hero-grid">
+    <!-- HERO -->
+    <section class="hero" id="acasa">
+      <div class="container hero-grid">
 
-      <div class="hero-copy">
+        <div class="hero-content reveal">
+          <span class="eyebrow">Strategic Marketing & Brand Development</span>
 
-        <div class="hero-kicker">
-          <span>Strategie. Claritate. Evoluție.</span>
-        </div>
+          <h1>
+            Direcție clară.
+            <span>Branduri cu valoare.</span>
+          </h1>
 
-        <p class="hero-subtitle">ARVANA Digital Marketing</p>
-
-        <h1>
-          Direcție
-          <span>clară.</span>
-          Branduri
-          <span>cu valoare.</span>
-        </h1>
-
-        <p class="hero-description">
-          Construiesc direcții strategice de marketing pentru branduri
-          care își doresc mai mult decât vizibilitate: poziționare clară,
-          comunicare coerentă și dezvoltare cu sens.
-        </p>
-
-        <div class="hero-actions">
-          <a href="#servicii" class="btn btn-primary">
-            Descoperă serviciile
-            <span class="btn-arrow">→</span>
-          </a>
-
-          <a href="#audit" class="btn btn-outline">
-            Începe cu auditul gratuit
-          </a>
-        </div>
-
-      </div>
-
-      <div class="hero-visual" aria-hidden="true">
-        <div class="orbit"></div>
-        <div class="orbit orbit-two"></div>
-        <div class="orbit orbit-three"></div>
-
-        <div class="hero-core">
-          <strong>ARVANA</strong>
-          <span>Strategic thinking</span>
-        </div>
-
-        <div class="orbit-tag tag-one">Brand strategy</div>
-        <div class="orbit-tag tag-two">Positioning</div>
-        <div class="orbit-tag tag-three">Communication</div>
-        <div class="orbit-tag tag-four">Growth direction</div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- INTRO -->
-
-  <section class="intro-section">
-    <div class="container intro-grid">
-
-      <div class="intro-number reveal">01</div>
-
-      <div class="intro-copy reveal delay-1">
-        <p class="section-label">Perspectiva ARVANA</p>
-
-        <h2>
-          Marketingul nu începe cu postări.
-          <em>Începe cu o direcție.</em>
-        </h2>
-
-        <p>
-          Un brand puternic nu se construiește doar prin prezență online.
-          Are nevoie de o identitate coerentă, o poziționare relevantă
-          și un mesaj care ajunge la oamenii potriviți.
-        </p>
-
-        <p>
-          Abordarea mea pornește de la strategie și urmărește legătura
-          dintre ceea ce este brandul, ceea ce comunică și felul în care
-          evoluează în piață.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-
-  <section class="section" id="despre">
-    <div class="container about-grid">
-
-      <div class="about-visual reveal" aria-hidden="true">
-        <span class="about-orbit-label one">Identitate</span>
-        <span class="about-orbit-label two">Poziționare</span>
-        <span class="about-orbit-label three">Strategie</span>
-        <span class="about-orbit-label four">Comunicare</span>
-
-        <div class="about-sphere">
-          <strong>ARVANA</strong>
-          <span>Brand direction</span>
-        </div>
-      </div>
-
-      <div class="about-copy reveal delay-1">
-
-        <p class="section-label">02 / Despre ARVANA</p>
-
-        <h2 class="section-title">
-          Claritate înainte de
-          <em>acțiune.</em>
-        </h2>
-
-        <p>
-          ARVANA este un proiect independent de strategie de marketing
-          și dezvoltare de brand, creat pentru businessuri care vor să
-          își înțeleagă mai bine direcția și să construiască o prezență
-          relevantă.
-        </p>
-
-        <p>
-          Analizez contextul, identific oportunitățile și construiesc
-          direcții de marketing adaptate obiectivelor fiecărui business.
-          Nu pornesc de la soluții standard, ci de la întrebările potrivite.
-        </p>
-
-        <p>
-          Cred în marketingul construit cu intenție: fiecare mesaj,
-          fiecare canal și fiecare acțiune trebuie să susțină aceeași
-          direcție de brand.
-        </p>
-
-        <div class="about-principles">
-
-          <div class="principle">
-            <strong>Strategie înainte de execuție</strong>
-            <span>Înțeleg contextul înainte de a propune direcții.</span>
+          <div class="hero-subtitle">
+            Strategie. Poziționare. Comunicare.
           </div>
 
-          <div class="principle">
-            <strong>Coerență în comunicare</strong>
-            <span>Construiesc legături între identitate și mesaj.</span>
+          <p class="hero-description">
+            Construiesc direcții de marketing care transformă ideile în
+            branduri coerente, mesajele în comunicare relevantă și
+            prezența digitală într-un instrument strategic pentru afacerea ta.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#servicii" class="button">Descoperă serviciile <span>→</span></a>
+            <a href="https://marianapastean.github.io/arvana-brand-marketing-audit/"
+               target="_blank" rel="noopener" class="button button-outline">
+              Începe auditul gratuit
+            </a>
           </div>
 
-          <div class="principle">
-            <strong>Decizii argumentate</strong>
-            <span>Urmăresc obiective și priorități clare.</span>
+          <div class="hero-note">
+            O abordare strategică. O direcție construită cu sens.
+          </div>
+        </div>
+
+        <div class="strategy-visual reveal" aria-label="Ilustrație strategică ARVANA">
+          <div class="strategy-ring"></div>
+
+          <div class="strategy-core">
+            <strong>ARVANA</strong>
+            <small>Strategic thinking</small>
           </div>
 
-          <div class="principle">
-            <strong>Dezvoltare cu sens</strong>
-            <span>Marketingul trebuie să susțină evoluția brandului.</span>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-
-  <section class="section services-section" id="servicii">
-    <div class="container">
-
-      <div class="services-heading reveal">
-        <div>
-          <p class="section-label">03 / Ce fac</p>
-
-          <h2 class="section-title">
-            Servicii construite în jurul
-            <em>strategiei.</em>
-          </h2>
+          <div class="orbit-node node-one">BRAND</div>
+          <div class="orbit-node node-two">STRATEGY</div>
+          <div class="orbit-node node-three">GROWTH</div>
+          <div class="orbit-node node-four">CONTENT</div>
         </div>
 
-        <p class="section-description">
-          Fiecare business are un context diferit. Serviciile ARVANA
-          urmăresc să creeze claritate, coerență și o direcție
-          de marketing adaptată nevoilor reale.
-        </p>
       </div>
+    </section>
 
-      <div class="services-grid">
+    <!-- DESPRE -->
+    <section class="section intro-section" id="despre">
+      <div class="container intro-grid">
 
-        <article class="service-card reveal">
-          <div class="service-number">01</div>
-          <div class="service-icon">◎</div>
-          <h3>Strategie de marketing & audit</h3>
-          <p>
-            Analizez prezența actuală, obiectivele, publicul și
-            oportunitățile pentru a identifica direcții de acțiune
-            și priorități de marketing.
-          </p>
-        </article>
-
-        <article class="service-card reveal delay-1">
-          <div class="service-number">02</div>
-          <div class="service-icon">◈</div>
-          <h3>Brand strategy & positioning</h3>
-          <p>
-            Clarific poziționarea, propunerea de valoare, diferențiatorii
-            și locul pe care brandul îl poate ocupa în piață.
-          </p>
-        </article>
-
-        <article class="service-card reveal delay-2">
-          <div class="service-number">03</div>
-          <div class="service-icon">✧</div>
-          <h3>Brand identity & direction</h3>
-          <p>
-            Definesc direcția identității de brand, personalitatea,
-            universul vizual și reperele care susțin o imagine coerentă.
-          </p>
-        </article>
-
-        <article class="service-card reveal delay-3">
-          <div class="service-number">04</div>
-          <div class="service-icon">⌁</div>
-          <h3>Marketing communication</h3>
-          <p>
-            Construiesc direcția mesajelor, tonul vocii și comunicarea
-            care exprimă clar valoarea și personalitatea brandului.
-          </p>
-        </article>
-
-        <article class="service-card reveal">
-          <div class="service-number">05</div>
-          <div class="service-icon">▤</div>
-          <h3>Content strategy & planning</h3>
-          <p>
-            Stabilesc pilonii de conținut, temele, formatele și
-            calendarul editorial în funcție de obiectivele brandului.
-          </p>
-        </article>
-
-        <article class="service-card reveal delay-1">
-          <div class="service-number">06</div>
-          <div class="service-icon">⌘</div>
-          <h3>Digital presence strategy</h3>
-          <p>
-            Evaluez canalele digitale și propun o direcție de prezență
-            online coerentă cu publicul și poziționarea brandului.
-          </p>
-        </article>
-
-        <article class="service-card reveal delay-2">
-          <div class="service-number">07</div>
-          <div class="service-icon">↗</div>
-          <h3>Marketing analysis & optimization</h3>
-          <p>
-            Analizez indicatorii relevanți, identific zonele de
-            îmbunătățire și formulez recomandări pentru optimizare.
-          </p>
-        </article>
-
-        <article class="service-card reveal delay-3">
-          <div class="service-number">08</div>
-          <div class="service-icon">✳</div>
-          <h3>Strategic brand consulting</h3>
-          <p>
-            Ofer o perspectivă strategică pentru decizii de brand,
-            prioritizarea inițiativelor și dezvoltarea direcției
-            de marketing.
-          </p>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- MARKETING FUNNEL -->
-
-  <section class="section" id="logica">
-    <div class="container funnel-layout">
-
-      <div class="funnel-intro reveal">
-        <p class="section-label">04 / Logica marketingului</p>
-
-        <h2 class="section-title">
-          De la
-          <em>vizibilitate</em>
-          la valoare.
-        </h2>
-
-        <p>
-          Marketingul eficient nu înseamnă doar să fii văzut.
-          Înseamnă să construiești o relație între brand și public,
-          să câștigi încredere și să creezi premisele unei decizii.
-        </p>
-
-        <p>
-          Fiecare etapă are un rol. Strategia conectează aceste etape
-          într-un parcurs coerent, adaptat obiectivelor businessului.
-        </p>
-
-        <div class="funnel-note">
-          Nu toate audiențele parcurg același traseu. Funnelul este
-          un model strategic orientativ, nu o promisiune de conversie.
-        </div>
-      </div>
-
-      <div class="funnel-visual reveal delay-1">
-
-        <div class="funnel-stage">
-          <div>
-            <strong>Vizibilitate</strong>
-            <span>Descoperire și awareness</span>
-          </div>
-          <span class="stage-number">01</span>
-        </div>
-
-        <div class="funnel-stage">
-          <div>
-            <strong>Interes</strong>
-            <span>Relevanță și explorare</span>
-          </div>
-          <span class="stage-number">02</span>
-        </div>
-
-        <div class="funnel-stage">
-          <div>
-            <strong>Încredere</strong>
-            <span>Credibilitate și relație</span>
-          </div>
-          <span class="stage-number">03</span>
-        </div>
-
-        <div class="funnel-stage">
-          <div>
-            <strong>Conversie</strong>
-            <span>Acțiune și decizie</span>
-          </div>
-          <span class="stage-number">04</span>
-        </div>
-
-        <p class="funnel-caption">
-          Un parcurs strategic construit în jurul publicului
-        </p>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- PROCESS -->
-
-  <section class="section process-section" id="strategie">
-    <div class="container">
-
-      <div class="process-heading reveal">
-        <p class="section-label">05 / Procesul meu</p>
-
-        <h2 class="section-title">
-          O direcție clară.
-          <em>Pași bine gândiți.</em>
-        </h2>
-
-        <p class="section-description">
-          Fiecare colaborare pornește de la înțelegerea businessului
-          și continuă printr-un proces strategic adaptat contextului,
-          resurselor și obiectivelor sale.
-        </p>
-      </div>
-
-      <div class="process-grid">
-
-        <article class="process-card reveal">
-          <div class="process-number">01</div>
-          <h3>Descoperire</h3>
-          <p>
-            Analizez businessul, contextul, publicul, provocările
-            și obiectivele. Identific punctul de plecare.
-          </p>
-        </article>
-
-        <article class="process-card reveal delay-1">
-          <div class="process-number">02</div>
-          <h3>Strategie</h3>
-          <p>
-            Definesc direcția, prioritățile, poziționarea și
-            elementele care susțin obiectivele brandului.
-          </p>
-        </article>
-
-        <article class="process-card reveal delay-2">
-          <div class="process-number">03</div>
-          <h3>Direcție</h3>
-          <p>
-            Construiesc recomandări și un plan de acțiune
-            coerent, cu pași și responsabilități clar definite.
-          </p>
-        </article>
-
-        <article class="process-card reveal delay-3">
-          <div class="process-number">04</div>
-          <h3>Optimizare</h3>
-          <p>
-            Evaluez evoluția, analizez indicatorii relevanți și
-            identific ajustările necesare pentru etapa următoare.
-          </p>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- FREE AUDIT -->
-
-  <section class="audit-section" id="audit">
-    <div class="container">
-
-      <div class="audit-card reveal">
-        <div class="audit-content">
-
-          <p class="section-label">Primul pas / Instrument gratuit</p>
+        <div class="intro-aside reveal">
+          <span class="eyebrow">01 / Despre ARVANA</span>
 
           <h2>
-            Cât de clară este direcția
-            <em>brandului tău?</em>
+            Marketingul începe cu
+            <span>direcția.</span>
           </h2>
+        </div>
 
+        <div class="intro-copy reveal">
           <p>
-            Am creat ARVANA BRAND & MARKETING AUDIT, un instrument
-            gratuit de autoevaluare care te ajută să privești mai clar
-            modul în care este construit și comunicat brandul tău.
+            Consider că un brand puternic nu se construiește doar prin
+            postări, campanii sau prezență online. Se construiește prin
+            <strong>claritate, strategie și consecvență.</strong>
           </p>
 
-          <div class="audit-features">
-            <span>15 întrebări</span>
-            <span>5 dimensiuni de evaluare</span>
-            <span>Evaluare orientativă</span>
-            <span>Acces gratuit</span>
-          </div>
+          <p>
+            Prin ARVANA, analizez felul în care un business se poziționează,
+            comunică și se prezintă în mediul digital. Identific oportunitățile
+            de dezvoltare și construiesc direcții de marketing adaptate
+            obiectivelor și identității fiecărui brand.
+          </p>
 
-          <a
-            href="https://marianapastean.github.io/arvana-brand-marketing-audit/"
-            class="btn btn-primary"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Începe auditul gratuit
-            <span class="btn-arrow">↗</span>
-          </a>
+          <p>
+            Abordarea mea pornește de la înțelegerea afacerii și continuă
+            prin definirea unei strategii coerente. Fiecare decizie trebuie
+            să aibă un scop, fiecare mesaj trebuie să transmită ceva relevant,
+            iar fiecare canal trebuie să susțină aceeași direcție.
+          </p>
+
+          <div class="principle-card">
+            <strong>Nu încep cu întrebarea „Ce postăm?”</strong>
+            <span>Încep cu întrebarea „Ce vrem să construim și de ce?”</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SERVICII -->
+    <section class="section services-section" id="servicii">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="eyebrow">02 / Servicii</span>
+          <h2>
+            Strategie înainte de
+            <span class="gold-text">execuție.</span>
+          </h2>
+          <p>
+            Fiecare serviciu urmărește să construiască o legătură mai clară
+            între identitatea brandului, obiectivele businessului și modul
+            în care acesta comunică.
+          </p>
+        </div>
+
+        <div class="services-grid">
+
+          <article class="service-card reveal">
+            <span class="service-number">01</span>
+            <h3>Marketing Strategy & Audit</h3>
+            <p>
+              Analizez situația actuală, identific punctele forte,
+              provocările și oportunitățile și conturez o direcție
+              strategică de marketing.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-number">02</span>
+            <h3>Brand Strategy & Positioning</h3>
+            <p>
+              Clarific poziționarea, publicul relevant, diferențiatorii
+              și valoarea pe care brandul o transmite în piață.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-number">03</span>
+            <h3>Brand Identity & Direction</h3>
+            <p>
+              Definesc direcția de identitate și coerența dintre
+              personalitatea brandului, mesajele sale și experiența
+              pe care o oferă.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-number">04</span>
+            <h3>Marketing Communication</h3>
+            <p>
+              Construiesc direcții de comunicare și mesaje care exprimă
+              clar valoarea brandului și susțin relația cu publicul.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-number">05</span>
+            <h3>Content Strategy</h3>
+            <p>
+              Planific pilonii de conținut, temele, formatele și
+              obiectivele comunicării pentru o prezență digitală
+              coerentă și relevantă.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-number">06</span>
+            <h3>Digital Presence</h3>
+            <p>
+              Analizez canalele digitale și construiesc o direcție
+              integrată pentru modul în care brandul se prezintă
+              și interacționează online.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-number">07</span>
+            <h3>Marketing Analysis</h3>
+            <p>
+              Evaluez comunicarea și indicatorii relevanți pentru a
+              identifica ce funcționează, ce trebuie ajustat și
+              unde există oportunități.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-number">08</span>
+            <h3>Strategic Consulting</h3>
+            <p>
+              Ofer perspectivă strategică și recomandări pentru
+              antreprenorii care au nevoie de mai multă claritate
+              în deciziile de brand și marketing.
+            </p>
+          </article>
 
         </div>
       </div>
+    </section>
 
-    </div>
-  </section>
+    <!-- LOGICA MARKETINGULUI -->
+    <section class="section funnel-section">
+      <div class="container funnel-layout">
 
-  <!-- CONTACT -->
+        <div class="funnel-copy reveal">
+          <span class="eyebrow">03 / Logica marketingului</span>
 
-  <section class="section contact-section" id="contact">
-    <div class="container contact-grid">
+          <h2>
+            De la vizibilitate
+            la <span class="gold-text">conversie.</span>
+          </h2>
 
-      <div class="contact-copy reveal">
+          <p>
+            Marketingul nu este o colecție de acțiuni independente.
+            Este un proces în care fiecare etapă contribuie la
+            construirea unei relații între brand și publicul său.
+          </p>
 
-        <p class="section-label">06 / Contact</p>
+          <p>
+            De aceea, urmăresc întregul parcurs: de la primul contact
+            cu brandul până la momentul în care apare încrederea și
+            se formează decizia.
+          </p>
+        </div>
 
-        <h2 class="section-title">
-          Să vorbim despre
-          <em>direcția ta.</em>
-        </h2>
+        <div class="funnel-visual reveal">
 
-        <p>
-          Fie că ai nevoie de claritate în poziționare, o strategie
-          de marketing sau o perspectivă nouă asupra brandului tău,
-          primul pas este o conversație.
-        </p>
+          <div class="funnel-stage">
+            <strong>Vizibilitate</strong>
+            <span>01 / DISCOVERY</span>
+          </div>
 
-        <p>
-          Spune-mi câteva lucruri despre businessul tău și despre
-          ceea ce îți dorești să construiești.
-        </p>
+          <div class="funnel-stage">
+            <strong>Interes</strong>
+            <span>02 / INTEREST</span>
+          </div>
 
-        <div class="contact-detail">
-          <span>Contact direct</span>
-          <a href="mailto:marianapastean.studio@gmail.com">
+          <div class="funnel-stage">
+            <strong>Încredere</strong>
+            <span>03 / TRUST</span>
+          </div>
+
+          <div class="funnel-stage">
+            <strong>Conversie</strong>
+            <span>04 / ACTION</span>
+          </div>
+
+          <p class="funnel-caption">
+            Fiecare etapă are un rol în experiența publicului cu brandul.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTENT STRATEGY -->
+    <section class="section content-section">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="eyebrow">04 / Conținut cu direcție</span>
+          <h2>
+            Fiecare mesaj are
+            <span class="purple-text">un rol.</span>
+          </h2>
+          <p>
+            Conținutul eficient nu înseamnă să comunici permanent.
+            Înseamnă să comunici relevant, consecvent și în acord
+            cu obiectivele brandului.
+          </p>
+        </div>
+
+        <div class="content-grid">
+
+          <div class="content-matrix reveal">
+            <div class="matrix-cell">
+              <span>01</span>
+              <strong>Educație</strong>
+            </div>
+
+            <div class="matrix-cell">
+              <span>02</span>
+              <strong>Autoritate</strong>
+            </div>
+
+            <div class="matrix-cell">
+              <span>03</span>
+              <strong>Conexiune</strong>
+            </div>
+
+            <div class="matrix-cell">
+              <span>04</span>
+              <strong>Conversie</strong>
+            </div>
+          </div>
+
+          <div class="content-copy reveal">
+            <h3>Construiesc o logică în spatele comunicării.</h3>
+
+            <p>
+              Fiecare pilon de conținut contribuie la o etapă diferită
+              din relația cu publicul. Împreună, formează o comunicare
+              care educă, diferențiază, creează încredere și susține
+              obiectivele businessului.
+            </p>
+
+            <ul class="content-list">
+              <li>Definirea pilonilor de comunicare</li>
+              <li>Planificarea temelor și formatelor</li>
+              <li>Corelarea conținutului cu obiectivele</li>
+              <li>Consecvență între canalele digitale</li>
+              <li>Evaluare și optimizare continuă</li>
+            </ul>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCES -->
+    <section class="section process-section" id="proces">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="eyebrow">05 / Abordarea mea</span>
+          <h2>
+            Claritate în fiecare
+            <span class="gold-text">etapă.</span>
+          </h2>
+          <p>
+            O abordare structurată, adaptată contextului fiecărui business,
+            de la înțelegerea situației actuale până la evaluarea direcției
+            construite.
+          </p>
+        </div>
+
+        <div class="process-grid">
+
+          <article class="process-card reveal">
+            <span class="number">01</span>
+            <h3>Descoperire</h3>
+            <p>
+              Înțeleg businessul, obiectivele, publicul, piața și
+              provocările actuale.
+            </p>
+            <div class="process-line"></div>
+          </article>
+
+          <article class="process-card reveal">
+            <span class="number">02</span>
+            <h3>Strategie</h3>
+            <p>
+              Identific prioritățile și definesc direcția de brand
+              și marketing.
+            </p>
+            <div class="process-line"></div>
+          </article>
+
+          <article class="process-card reveal">
+            <span class="number">03</span>
+            <h3>Direcție</h3>
+            <p>
+              Structurez recomandările și pașii necesari pentru
+              aplicarea strategiei.
+            </p>
+            <div class="process-line"></div>
+          </article>
+
+          <article class="process-card reveal">
+            <span class="number">04</span>
+            <h3>Optimizare</h3>
+            <p>
+              Evaluez evoluția și identific ajustările care pot
+              susține obiectivele stabilite.
+            </p>
+            <div class="process-line"></div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- AUDIT GRATUIT -->
+    <section class="section audit-section" id="audit">
+      <div class="container">
+
+        <div class="audit-card reveal">
+
+          <div>
+            <span class="eyebrow">06 / Instrument gratuit</span>
+
+            <h2>
+              Cât de clară este
+              <span class="purple-text">direcția brandului tău?</span>
+            </h2>
+
+            <p>
+              Am creat ARVANA Brand & Marketing Audit, un instrument
+              gratuit de autoevaluare care te ajută să privești mai clar
+              asupra modului în care este construit și comunicat brandul tău.
+            </p>
+
+            <div class="audit-features">
+              <div class="audit-feature">15 întrebări</div>
+              <div class="audit-feature">5 dimensiuni</div>
+              <div class="audit-feature">Evaluare orientativă</div>
+              <div class="audit-feature">Recomandări inițiale</div>
+            </div>
+
+            <a
+              href="https://marianapastean.github.io/arvana-brand-marketing-audit/"
+              target="_blank"
+              rel="noopener"
+              class="button"
+            >
+              Începe evaluarea gratuită →
+            </a>
+          </div>
+
+          <div class="audit-visual" aria-label="Audit de brand și marketing">
+            <strong>15</strong>
+            <span>QUESTIONS</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact-section" id="contact">
+      <div class="container contact-grid">
+
+        <div class="contact-copy reveal">
+          <span class="eyebrow">07 / Contact</span>
+
+          <h2>
+            Hai să construim
+            <span class="gold-text">o direcție clară.</span>
+          </h2>
+
+          <p>
+            Dacă simți că brandul sau businessul tău are nevoie de
+            mai multă claritate, strategie și coerență, scrie-mi.
+            Vreau să înțeleg unde te afli și ce îți dorești să construiești.
+          </p>
+
+          <a class="contact-email" href="mailto:marianapastean.studio@gmail.com">
             marianapastean.studio@gmail.com
           </a>
         </div>
 
-      </div>
-
-      <div class="contact-form reveal delay-1">
-
-        <h3 class="form-heading">Hai să începem o conversație.</h3>
-
-        <p class="form-intro">
-          Completează formularul, iar eu voi reveni către tine
-          în cel mai scurt timp.
-        </p>
-
         <form
+          class="contact-form reveal"
           action="https://formsubmit.co/marianapastean.studio@gmail.com"
           method="POST"
           target="_blank"
         >
 
-          <input
-            type="hidden"
-            name="_next"
-            value="https://marianapastean.github.io/arvana-digital-marketing/thank-you.html"
-          >
-
-          <input
-            type="hidden"
-            name="_subject"
-            value="Solicitare nouă de pe site-ul ARVANA"
-          >
-
-          <input
-            type="hidden"
-            name="_template"
-            value="table"
-          >
-
-          <input
-            type="hidden"
-            name="_captcha"
-            value="true"
-          >
+          <input type="hidden" name="_subject" value="Solicitare nouă de pe site-ul ARVANA">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://marianapastean.github.io/arvana-digital-marketing/thank-you.html">
+          <input type="hidden" name="_captcha" value="true">
 
           <input
             type="text"
             name="_honey"
-            style="display:none"
             tabindex="-1"
             autocomplete="off"
+            aria-hidden="true"
+            style="display:none"
           >
 
           <div class="form-row">
-
-            <div class="form-group">
+            <div class="form-field">
               <label for="name">Numele tău *</label>
               <input
                 type="text"
                 id="name"
-                name="Nume"
+                name="name"
                 placeholder="Cum te numești?"
                 autocomplete="name"
                 required
               >
             </div>
 
-            <div class="form-group">
-              <label for="email">Adresa de e-mail *</label>
+            <div class="form-field">
+              <label for="email">Adresa de email *</label>
               <input
                 type="email"
                 id="email"
@@ -2063,177 +2005,166 @@
                 required
               >
             </div>
-
           </div>
 
-          <div class="form-group">
+          <div class="form-field">
             <label for="business">Business / Brand</label>
             <input
               type="text"
               id="business"
-              name="Business sau brand"
-              placeholder="Numele businessului tău"
+              name="business"
+              placeholder="Numele businessului sau brandului"
             >
           </div>
 
-          <div class="form-group">
+          <div class="form-field">
             <label for="service">Cu ce te pot ajuta?</label>
-
-            <select id="service" name="Serviciu de interes">
-              <option value="">Selectează o direcție</option>
-              <option>Strategie de marketing & audit</option>
-              <option>Brand strategy & positioning</option>
-              <option>Brand identity & direction</option>
-              <option>Marketing communication</option>
-              <option>Content strategy & planning</option>
-              <option>Digital presence strategy</option>
-              <option>Marketing analysis & optimization</option>
-              <option>Strategic brand consulting</option>
-              <option>Nu sunt sigur(ă) încă</option>
+            <select id="service" name="service">
+              <option value="">Alege o direcție</option>
+              <option value="Strategie de marketing">Strategie de marketing</option>
+              <option value="Strategie și poziționare de brand">Strategie și poziționare de brand</option>
+              <option value="Identitate și direcție de brand">Identitate și direcție de brand</option>
+              <option value="Strategie de conținut">Strategie de conținut</option>
+              <option value="Comunicare și prezență digitală">Comunicare și prezență digitală</option>
+              <option value="Consultanță strategică">Consultanță strategică</option>
+              <option value="Altă solicitare">Altă solicitare</option>
             </select>
           </div>
 
-          <div class="form-group">
+          <div class="form-field">
             <label for="message">Mesajul tău *</label>
             <textarea
               id="message"
-              name="Mesaj"
-              placeholder="Povestește-mi pe scurt despre businessul tău și ce îți dorești să îmbunătățești..."
+              name="message"
+              placeholder="Povestește-mi puțin despre businessul tău și ce ai dori să construim."
               required
             ></textarea>
           </div>
 
-          <button type="submit" class="btn btn-primary form-submit">
-            Trimite mesajul
-            <span class="btn-arrow">→</span>
+          <button type="submit" class="button form-submit">
+            Trimite mesajul →
           </button>
 
-          <p class="form-privacy">
-            Prin trimiterea formularului, ești de acord ca datele
-            completate să fie folosite pentru a răspunde solicitării tale.
+          <p class="form-note">
+            Prin trimiterea formularului, ești de acord să folosesc
+            informațiile furnizate pentru a răspunde solicitării tale.
           </p>
 
         </form>
 
       </div>
-    </div>
-  </section>
+    </section>
+
+  </main>
 
   <!-- FOOTER -->
-
-  <footer>
+  <footer class="site-footer">
     <div class="container">
 
-      <div class="footer-main">
+      <div class="footer-top">
 
-        <a href="#acasa" class="brand-logo" aria-label="ARVANA - Pagina principală">
+        <a href="#acasa" class="footer-brand" aria-label="ARVANA – înapoi sus">
           <img
+            class="brand-logo"
             src="./Logo%20-%20ARVANA%20Digital%20Marketing%20%281%29.png"
             alt="ARVANA Digital Marketing"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
           >
-          <span class="logo-fallback">
-            <strong>ARVANA</strong>
-            <span>Digital Marketing</span>
+          <span class="brand-fallback">
+            ARVANA
+            <small>Digital Marketing</small>
           </span>
         </a>
 
-        <p class="footer-slogan">
-          Direcție clară. Branduri cu valoare.
-        </p>
+        <nav class="footer-links" aria-label="Navigare footer">
+          <a href="#despre">Despre</a>
+          <a href="#servicii">Servicii</a>
+          <a href="#proces">Abordare</a>
+          <a href="#audit">Audit gratuit</a>
+          <a href="#contact">Contact</a>
+        </nav>
 
       </div>
 
       <div class="footer-bottom">
-
-        <p>
-          © 2026 ARVANA Digital Marketing. Toate drepturile rezervate.
-        </p>
-
-        <a href="mailto:marianapastean.studio@gmail.com">
-          Contactează-mă
-        </a>
-
+        <span>© <span id="currentYear"></span> ARVANA Digital Marketing. Toate drepturile rezervate.</span>
+        <span>Direcție clară. Branduri cu valoare.</span>
       </div>
 
     </div>
   </footer>
 
   <script>
-    // NAVBAR LA SCROLL
-
-    const navbar = document.getElementById("navbar");
-
-    function updateNavbar() {
-      navbar.classList.toggle("scrolled", window.scrollY > 35);
-    }
-
-    window.addEventListener("scroll", updateNavbar, { passive: true });
-    updateNavbar();
-
-
-    // MENIU RESPONSIVE
+    // MOBILE NAVIGATION
 
     const menuToggle = document.getElementById("menuToggle");
-    const navLinks = document.getElementById("navLinks");
+    const mainNav = document.getElementById("mainNav");
 
     function closeMenu() {
-      navLinks.classList.remove("open");
+      mainNav.classList.remove("open");
       menuToggle.setAttribute("aria-expanded", "false");
       menuToggle.setAttribute("aria-label", "Deschide meniul");
-      menuToggle.textContent = "☰";
     }
 
-    menuToggle.addEventListener("click", () => {
-      const isOpen = navLinks.classList.toggle("open");
+    menuToggle.addEventListener("click", function () {
+      const isOpen = mainNav.classList.toggle("open");
 
       menuToggle.setAttribute("aria-expanded", String(isOpen));
       menuToggle.setAttribute(
         "aria-label",
         isOpen ? "Închide meniul" : "Deschide meniul"
       );
-
-      menuToggle.textContent = isOpen ? "×" : "☰";
     });
 
-    navLinks.querySelectorAll("a").forEach(link => {
+    mainNav.querySelectorAll("a").forEach(function (link) {
       link.addEventListener("click", closeMenu);
     });
 
-    document.addEventListener("keydown", event => {
-      if (event.key === "Escape") {
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") closeMenu();
+    });
+
+    document.addEventListener("click", function (event) {
+      if (
+        !mainNav.contains(event.target) &&
+        !menuToggle.contains(event.target)
+      ) {
         closeMenu();
       }
     });
 
-
-    // ANIMATII LA DERULARE
+    // SCROLL REVEAL
 
     const revealElements = document.querySelectorAll(".reveal");
 
-    const reduceMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.12
+        }
+      );
 
-    if ("IntersectionObserver" in window && !reduceMotion) {
-      const observer = new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            obs.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: 0.12,
-        rootMargin: "0px 0px -35px 0px"
+      revealElements.forEach(function (element) {
+        observer.observe(element);
       });
-
-      revealElements.forEach(element => observer.observe(element));
     } else {
-      revealElements.forEach(element => {
+      revealElements.forEach(function (element) {
         element.classList.add("visible");
       });
     }
+
+    // CURRENT YEAR
+
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
   </script>
 
 </body>
