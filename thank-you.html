@@ -8,22 +8,38 @@
 
   <title>Mulțumesc pentru mesaj | ARVANA Digital Marketing</title>
 
+  <meta
+    name="description"
+    content="Mesajul tău a fost transmis cu succes către ARVANA Digital Marketing. Îți mulțumesc pentru încredere!"
+  >
+
+  <meta name="robots" content="noindex, follow">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
     :root {
       --plum-dark: #24152F;
+      --plum-deep: #2C1B38;
       --plum: #352044;
       --plum-light: #513264;
       --purple: #73518B;
       --lavender: #D5C2E2;
+
       --gold: #D6B477;
       --gold-light: #F0DDB8;
+      --gold-soft: #C9A66E;
+
       --ivory: #FFF9F0;
-      --muted: #D8CCDF;
-      --border: rgba(214,180,119,.32);
+      --muted: #E0D5E5;
+
+      --border: rgba(214,180,119,.35);
     }
 
     * {
@@ -32,30 +48,81 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       min-height: 100vh;
+      min-height: 100svh;
       display: flex;
       flex-direction: column;
       overflow-x: hidden;
+
       font-family: "DM Sans", sans-serif;
       color: var(--ivory);
+
       background:
-        radial-gradient(ellipse at 50% 42%,rgba(115,81,139,.34),transparent 48%),
-        linear-gradient(135deg,#24152F,#30203D,#24152F);
+        radial-gradient(
+          ellipse at 50% 42%,
+          rgba(115,81,139,.38),
+          transparent 52%
+        ),
+        radial-gradient(
+          circle at 10% 10%,
+          rgba(214,180,119,.07),
+          transparent 30%
+        ),
+        linear-gradient(
+          135deg,
+          #24152F 0%,
+          #30203D 50%,
+          #24152F 100%
+        );
     }
+
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* BACKGROUND DECORATION */
 
     .ambient {
       position: fixed;
       inset: 0;
       overflow: hidden;
       pointer-events: none;
+      z-index: 0;
+    }
+
+    .ambient::before,
+    .ambient::after {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 100%;
+      top: 0;
+      background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(214,180,119,.10),
+        transparent
+      );
+    }
+
+    .ambient::before {
+      left: 12%;
+    }
+
+    .ambient::after {
+      right: 12%;
     }
 
     .orb {
       position: absolute;
-      border: 1px solid rgba(214,180,119,.16);
+      border: 1px solid rgba(214,180,119,.18);
       border-radius: 50%;
-      animation: float 12s ease-in-out infinite;
+      animation: float 14s ease-in-out infinite;
     }
 
     .orb-one {
@@ -73,24 +140,50 @@
       animation-delay: -5s;
     }
 
-    @keyframes float {
-      0%,100% { transform: translateY(0) rotate(0); }
-      50% { transform: translateY(-18px) rotate(8deg); }
+    .orb-three {
+      width: 150px;
+      height: 150px;
+      top: 35%;
+      left: 5%;
+      border-color: rgba(214,180,119,.10);
+      animation-delay: -8s;
     }
 
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-20px) rotate(8deg);
+      }
+    }
+
+    /* HEADER */
+
     header {
+      width: 100%;
       padding: 27px 7%;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       position: relative;
       z-index: 2;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
     }
 
     .logo img {
       width: 165px;
       height: auto;
       display: block;
+      object-fit: contain;
     }
 
     .header-label {
@@ -98,32 +191,62 @@
       font-size: 10px;
       font-weight: 600;
       letter-spacing: 3px;
+      line-height: 1.7;
       text-transform: uppercase;
+      text-align: right;
     }
+
+    /* MAIN */
 
     main {
       flex: 1;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       padding: 55px 22px 85px;
+
       position: relative;
       z-index: 1;
     }
 
+    /* CONFIRMATION CARD */
+
     .confirmation-card {
       width: 100%;
-      max-width: 850px;
-      padding: 76px 65px;
+      max-width: 880px;
+
+      padding: 78px 70px;
+
       position: relative;
       overflow: hidden;
+
       text-align: center;
+
       border: 1px solid var(--border);
-      border-radius: 34px;
-      background: linear-gradient(145deg,rgba(81,50,100,.83),rgba(42,27,54,.94));
-      box-shadow: 0 35px 100px rgba(16,8,22,.28),inset 0 1px 0 rgba(255,255,255,.08);
+      border-radius: 36px;
+
+      background:
+        radial-gradient(
+          ellipse at 50% 0%,
+          rgba(115,81,139,.35),
+          transparent 60%
+        ),
+        linear-gradient(
+          145deg,
+          rgba(81,50,100,.88),
+          rgba(42,27,54,.97)
+        );
+
+      box-shadow:
+        0 35px 100px rgba(16,8,22,.32),
+        inset 0 1px 0 rgba(255,255,255,.09);
+
       backdrop-filter: blur(20px);
-      animation: reveal 1s ease both;
+      -webkit-backdrop-filter: blur(20px);
+
+      animation: reveal 1s cubic-bezier(.2,.7,.2,1) both;
     }
 
     .confirmation-card::before {
@@ -133,58 +256,126 @@
       left: 15%;
       width: 70%;
       height: 1px;
-      background: linear-gradient(90deg,transparent,var(--gold),transparent);
+
+      background: linear-gradient(
+        90deg,
+        transparent,
+        var(--gold),
+        transparent
+      );
+    }
+
+    .confirmation-card::after {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      top: -180px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      border-radius: 50%;
+      border: 1px solid rgba(214,180,119,.13);
+
+      pointer-events: none;
     }
 
     @keyframes reveal {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(35px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
+    /* SUCCESS SYMBOL */
+
     .success-wrapper {
-      width: 108px;
-      height: 108px;
+      width: 112px;
+      height: 112px;
+
       padding: 8px;
-      margin: 0 auto 36px;
-      border: 1px solid rgba(214,180,119,.55);
+      margin: 0 auto 38px;
+
+      border: 1px solid rgba(214,180,119,.65);
       border-radius: 50%;
-      box-shadow: 0 0 0 12px rgba(214,180,119,.035),0 0 50px rgba(214,180,119,.13);
+
+      box-shadow:
+        0 0 0 12px rgba(214,180,119,.045),
+        0 0 50px rgba(214,180,119,.16);
+
       animation: pulse 4s ease-in-out infinite;
     }
 
     .success-inner {
       width: 100%;
       height: 100%;
+
       border-radius: 50%;
+
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(145deg,#E9D1A1,#C59D61);
+
+      background: linear-gradient(
+        145deg,
+        #F0DDB8,
+        #C59D61
+      );
+
       color: #352044;
-      font-size: 43px;
+      font-size: 44px;
+      font-weight: 500;
+
+      box-shadow:
+        inset 0 2px 5px rgba(255,255,255,.4),
+        0 5px 18px rgba(0,0,0,.12);
     }
 
     @keyframes pulse {
-      0%,100% { box-shadow: 0 0 0 12px rgba(214,180,119,.035),0 0 50px rgba(214,180,119,.13); }
-      50% { box-shadow: 0 0 0 19px rgba(214,180,119,.025),0 0 65px rgba(214,180,119,.2); }
+      0%, 100% {
+        box-shadow:
+          0 0 0 12px rgba(214,180,119,.045),
+          0 0 50px rgba(214,180,119,.16);
+      }
+
+      50% {
+        box-shadow:
+          0 0 0 19px rgba(214,180,119,.025),
+          0 0 68px rgba(214,180,119,.23);
+      }
     }
+
+    /* TEXT */
 
     .eyebrow {
       color: var(--gold-light);
+
       font-size: 11px;
       font-weight: 700;
+
       letter-spacing: 4px;
       text-transform: uppercase;
-      margin-bottom: 26px;
+
+      margin-bottom: 27px;
     }
 
     h1 {
-      font-family: "Playfair Display",serif;
-      font-size: clamp(48px,7vw,82px);
+      font-family: "Playfair Display", serif;
+
+      font-size: clamp(48px, 7vw, 84px);
       font-weight: 500;
-      line-height: 1.08;
+
+      line-height: 1.12;
       letter-spacing: -2px;
-      margin-bottom: 27px;
+
+      margin-bottom: 29px;
+
+      color: var(--ivory);
     }
 
     h1 span {
@@ -194,77 +385,146 @@
     }
 
     .description {
-      max-width: 590px;
-      margin: auto;
+      max-width: 610px;
+
+      margin: 0 auto;
+
       color: var(--muted);
+
       font-size: 16px;
+      font-weight: 400;
+
       line-height: 1.95;
     }
 
+    /* DIVIDER */
+
     .divider {
-      width: 100px;
+      width: 110px;
       height: 1px;
-      margin: 39px auto;
-      background: linear-gradient(90deg,transparent,var(--gold),transparent);
+
+      margin: 40px auto;
+
+      background: linear-gradient(
+        90deg,
+        transparent,
+        var(--gold),
+        transparent
+      );
     }
 
+    /* NEXT STEP */
+
     .next-step {
-      max-width: 480px;
-      margin: 0 auto 37px;
+      max-width: 500px;
+
+      margin: 0 auto 39px;
+
       color: var(--muted);
-      font-size: 13px;
+
+      font-size: 14px;
       line-height: 1.9;
     }
 
     .next-step strong {
+      display: inline-block;
+      margin-top: 9px;
+
       color: var(--gold-light);
+      font-weight: 600;
     }
 
+    /* BUTTON */
+
     .back-button {
-      min-height: 61px;
+      min-height: 62px;
+
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 16px;
-      padding: 0 38px;
+      gap: 17px;
+
+      padding: 0 42px;
+
+      border: 1px solid rgba(255,255,255,.12);
       border-radius: 50px;
-      background: linear-gradient(110deg,#D6B477,#F0DDB8);
+
+      background: linear-gradient(
+        110deg,
+        #D6B477,
+        #F0DDB8
+      );
+
       color: #30203D;
+
       text-decoration: none;
+
       font-size: 11px;
       font-weight: 700;
+
       letter-spacing: 1.7px;
       text-transform: uppercase;
-      transition: .35s;
-      box-shadow: 0 12px 35px rgba(214,180,119,.16);
+
+      box-shadow:
+        0 12px 35px rgba(214,180,119,.18);
+
+      transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        background .35s ease;
     }
 
     .back-button:hover {
       transform: translateY(-5px);
-      box-shadow: 0 18px 45px rgba(214,180,119,.28);
+
+      box-shadow:
+        0 18px 45px rgba(214,180,119,.30);
+
+      background: linear-gradient(
+        110deg,
+        #E6C994,
+        #FFF0D0
+      );
+    }
+
+    .back-button:focus-visible {
+      outline: 3px solid var(--ivory);
+      outline-offset: 5px;
     }
 
     .arrow {
       font-size: 19px;
-      transition: transform .3s;
+      line-height: 1;
+
+      transition: transform .3s ease;
     }
 
     .back-button:hover .arrow {
       transform: translateX(5px);
     }
 
+    /* FOOTER */
+
     footer {
-      padding: 25px 20px;
+      padding: 26px 20px;
+
       text-align: center;
-      border-top: 1px solid rgba(214,180,119,.16);
+
+      border-top: 1px solid rgba(214,180,119,.17);
+
       position: relative;
       z-index: 1;
     }
 
     footer p {
-      color: #C2B3CA;
+      color: #D0C2D6;
+
       font-size: 10px;
+      font-weight: 500;
+
       letter-spacing: 2px;
+      line-height: 1.9;
+
       text-transform: uppercase;
     }
 
@@ -272,88 +532,176 @@
       color: var(--gold-light);
     }
 
-    @media(max-width:600px) {
+    /* TABLET */
+
+    @media (max-width: 900px) {
+      .confirmation-card {
+        max-width: 760px;
+        padding: 68px 48px;
+      }
+
+      h1 {
+        font-size: clamp(48px, 8vw, 72px);
+      }
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 600px) {
       header {
         padding: 22px 6%;
       }
 
       .logo img {
-        width: 135px;
+        width: 138px;
       }
 
       .header-label {
-        max-width: 125px;
+        max-width: 145px;
+
         font-size: 8px;
-        line-height: 1.6;
+        line-height: 1.7;
         letter-spacing: 1.5px;
-        text-align: right;
       }
 
       main {
-        padding: 40px 16px 55px;
+        padding: 38px 16px 55px;
       }
 
       .confirmation-card {
-        padding: 52px 23px;
-        border-radius: 25px;
+        padding: 52px 24px 55px;
+
+        border-radius: 27px;
+
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
       }
 
       .success-wrapper {
-        width: 88px;
-        height: 88px;
+        width: 91px;
+        height: 91px;
+
+        margin-bottom: 32px;
       }
 
       .success-inner {
-        font-size: 35px;
+        font-size: 36px;
       }
 
       .eyebrow {
         font-size: 9px;
         letter-spacing: 2.5px;
+        line-height: 1.8;
+
+        margin-bottom: 23px;
       }
 
       h1 {
-        font-size: clamp(42px,11vw,60px);
+        font-size: clamp(42px, 11vw, 60px);
         letter-spacing: -1px;
+        line-height: 1.12;
+
+        margin-bottom: 23px;
       }
 
       .description {
         font-size: 14px;
+        line-height: 1.9;
+      }
+
+      .divider {
+        margin: 32px auto;
       }
 
       .next-step {
         font-size: 12px;
+        line-height: 1.9;
+
+        margin-bottom: 32px;
       }
 
       .back-button {
         width: 100%;
-        padding: 0 20px;
+        min-height: 59px;
+
+        padding: 0 17px;
+
         font-size: 10px;
+        letter-spacing: 1.4px;
+      }
+
+      footer {
+        padding: 22px 17px;
       }
 
       footer p {
         font-size: 8px;
         letter-spacing: 1.2px;
-        line-height: 1.8;
+        line-height: 2;
+      }
+
+      .orb-one {
+        width: 280px;
+        height: 280px;
+      }
+
+      .orb-two {
+        width: 220px;
+        height: 220px;
+      }
+
+      .orb-three {
+        display: none;
       }
     }
 
-    @media(max-width:380px) {
+    /* SMALL MOBILE */
+
+    @media (max-width: 380px) {
       .header-label {
         display: none;
       }
 
       .confirmation-card {
-        padding: 45px 18px;
+        padding: 45px 19px 48px;
       }
 
       h1 {
         font-size: 42px;
       }
+
+      .description {
+        font-size: 13px;
+      }
+
+      .back-button {
+        font-size: 9px;
+        letter-spacing: 1px;
+      }
     }
 
-    @media(prefers-reduced-motion:reduce) {
-      *,*::before,*::after {
+    /* TOUCH DEVICES */
+
+    @media (hover: none) {
+      .back-button:hover {
+        transform: none;
+
+        box-shadow:
+          0 12px 35px rgba(214,180,119,.18);
+      }
+
+      .back-button:hover .arrow {
+        transform: none;
+      }
+    }
+
+    /* ACCESSIBILITY */
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
         animation-duration: .01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: .01ms !important;
@@ -364,15 +712,22 @@
 
 <body>
 
+  <!-- DECORATIVE BACKGROUND -->
+
   <div class="ambient" aria-hidden="true">
     <div class="orb orb-one"></div>
     <div class="orb orb-two"></div>
+    <div class="orb orb-three"></div>
   </div>
 
+  <!-- HEADER -->
+
   <header>
+
     <a
       class="logo"
       href="https://marianapastean.github.io/arvana-digital-marketing/"
+      aria-label="ARVANA Digital Marketing - Pagina principală"
     >
       <img
         src="https://raw.githubusercontent.com/marianapastean/arvana-digital-marketing/main/Logo%20-%20ARVANA%20Digital%20Marketing%20%281%29.png"
@@ -383,48 +738,77 @@
     <div class="header-label">
       Strategic Marketing & Brand Development
     </div>
+
   </header>
 
-  <main>
-    <section class="confirmation-card">
+  <!-- MAIN CONTENT -->
 
-      <div class="success-wrapper">
+  <main>
+
+    <section
+      class="confirmation-card"
+      aria-labelledby="confirmation-title"
+      aria-describedby="confirmation-description"
+    >
+
+      <!-- SUCCESS SYMBOL -->
+
+      <div class="success-wrapper" aria-hidden="true">
         <div class="success-inner">✓</div>
       </div>
 
-      <p class="eyebrow">Mesaj transmis cu succes</p>
+      <!-- CONFIRMATION MESSAGE -->
 
-      <h1>
+      <p class="eyebrow">
+        Mesaj transmis cu succes
+      </p>
+
+      <h1 id="confirmation-title">
         Mulțumesc
         <span>pentru mesaj!</span>
       </h1>
 
-      <p class="description">
+      <p
+        class="description"
+        id="confirmation-description"
+      >
         Mă bucur că ai ales să faci primul pas către o direcție
         mai clară pentru brandul sau businessul tău.
+
         Mesajul tău a fost transmis cu succes și îl voi analiza
         cu atenție.
       </p>
 
-      <div class="divider"></div>
+      <div class="divider" aria-hidden="true"></div>
+
+      <!-- NEXT STEP -->
 
       <p class="next-step">
         Voi reveni în cel mai scurt timp la adresa de e-mail
         pe care ai completat-o în formular.
+
         <br>
-        <strong>Îți mulțumesc pentru încredere!</strong>
+
+        <strong>
+          Îți mulțumesc pentru încredere!
+        </strong>
       </p>
+
+      <!-- RETURN BUTTON -->
 
       <a
         class="back-button"
         href="https://marianapastean.github.io/arvana-digital-marketing/"
       >
         Înapoi la ARVANA
-        <span class="arrow">→</span>
+        <span class="arrow" aria-hidden="true">→</span>
       </a>
 
     </section>
+
   </main>
+
+  <!-- FOOTER -->
 
   <footer>
     <p>
